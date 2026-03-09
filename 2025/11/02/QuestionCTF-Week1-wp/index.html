@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/mimi.jpg">
+  <link rel="icon" href="/img/mimi.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Goocean5263">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Week1-Web-Misc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QuestionCTF-Week1-wp">
+<meta property="og:url" content="https://goocean5263.github.io/2025/11/02/QuestionCTF-Week1-wp/index.html">
+<meta property="og:site_name" content="Gone with the Wind">
+<meta property="og:description" content="Week1-Web-Misc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010171057024.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010171525709.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010171804332.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010171925699.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010172019654.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010172724749.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010172838747.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010173051507.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010173226199.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010173412168.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010173614540.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010173801791.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010174011593.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010174201413.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010174535713.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010174751329.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010174927354.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175058915.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175418793.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175520811.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175709010.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175804549.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010175824512.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010180757382.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010181657308.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010181705611.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010181754431.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010182127887.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010182458471.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010182514369.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010182627340.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010182952369.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010183221733.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010183332614.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010183908340.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010183928834.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010184041761.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010184132616.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010184541892.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010184835197.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016184458927.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016184552806.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016184822459.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016190740185.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016190808786.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016191021444.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016191402279.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016191443301.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016205633054.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016205815108.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016210142009.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016213338230.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016213529070.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016213721911.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251016213843659.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185201705.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185349304.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185508096.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185600932.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185823069.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010185950455.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190012508.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190027618.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190111956.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190156300.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190316752.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190409567.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190430477.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190638050.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010190723022.png">
+<meta property="article:published_time" content="2025-11-02T07:26:20.000Z">
+<meta property="article:modified_time" content="2026-03-09T08:11:42.115Z">
+<meta property="article:author" content="Goocean5263">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goocean5263.github.io/images/QuestionCTF-Week1-wp/image-20251010171057024.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>QuestionCTF-Week1-wp - Gone with the Wind</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"goocean5263.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b264de23432894f08f407e28d8a46a83","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b264de23432894f08f407e28d8a46a83";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Gong with the wind</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="QuestionCTF-Week1-wp"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-02 15:26" pubdate>
+          2025年11月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">QuestionCTF-Week1-wp</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="CTF-Week1"><a href="#CTF-Week1" class="headerlink" title="?CTF-Week1"></a>?CTF-Week1</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Gitttttttt"><a href="#Gitttttttt" class="headerlink" title="Gitttttttt"></a>Gitttttttt</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010171057024.png" srcset="/img/loading.gif" lazyload alt="image-20251010171057024"></p>
+<p>题目提示的很清楚了，就是git泄漏</p>
+<p>使用<strong>githack</strong>工具</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">python</span> GitHack.<span class="hljs-keyword">py</span> http://challenge.ilovectf.<span class="hljs-keyword">cn</span>:<span class="hljs-number">30120</span>/.git/<br></code></pre></td></tr></table></figure>
+
+<p>记得后面一定要加上.git才行</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010171525709.png" srcset="/img/loading.gif" lazyload alt="image-20251010171525709"></p>
+<p>进入文件夹，点击txt文件，得到flag</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010171804332.png" srcset="/img/loading.gif" lazyload alt="image-20251010171804332"></p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">flag&#123;oH_I_n3Zv<span class="hljs-meta">#r_13VE0_tI3_GBi7_4B64zn&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Ping"><a href="#Ping" class="headerlink" title="Ping??"></a>Ping??</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010171925699.png" srcset="/img/loading.gif" lazyload alt="image-20251010171925699"></p>
+<p>进入网站，由题目和网页内容可知，可能存在<strong>命令执行</strong>漏洞</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010172019654.png" srcset="/img/loading.gif" lazyload alt="image-20251010172019654"></p>
+<p>这里用到命令拼接符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">命令拼接符&amp;、&amp;&amp;、|、||等<br>命令拼接符：<br>|、||、&amp;、&amp;&amp;的区别：<br>&amp;：无论左边是<span class="hljs-literal">false</span>还是<span class="hljs-literal">true</span>，右边都执行<br>&amp;&amp;：具有短路效果，左边是<span class="hljs-literal">false</span>，右边不执行。<br>|:无论左边是<span class="hljs-literal">false</span>还是<span class="hljs-literal">true</span>，右边都会执行<br>||：具有短路效果，左边是<span class="hljs-literal">true</span>，右边不执行。<br>短路效果：逻辑运算符的短路效果逻辑运算符当能得到结果时，就不会再继续运算右边的代码，以节省空间以及一定的性能，称为短路效果<br><br>还有一个;<br>分号可以将前一条命令隔断，分号后面可以写入新的一条命令，比如<br>127.0.0.1;<span class="hljs-built_in">ls</span><br>会将前面的ping命令执行后，再执行<span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span>;ls<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010172724749.png" srcset="/img/loading.gif" lazyload alt="image-20251010172724749"></p>
+<p>发现当前目录下有flag.txt</p>
+<p>但是发现flag被过滤了</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010172838747.png" srcset="/img/loading.gif" lazyload alt="image-20251010172838747"></p>
+<p>直接使用*通配符绕过</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span>;cat f*<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010173051507.png" srcset="/img/loading.gif" lazyload alt="image-20251010173051507"></p>
+<p>得到flag</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">flag&#123;aedce264-b42c-<span class="hljs-number">4203</span>-<span class="hljs-number">8b87</span>-ced6ee8ed44f&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="from-http"><a href="#from-http" class="headerlink" title="from_http"></a>from_http</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010173226199.png" srcset="/img/loading.gif" lazyload alt="image-20251010173226199"></p>
+<p>一道http的题，需要掌握请求包的修改以及传参，直接打开bp抓包</p>
+<p>1. </p>
+<p>   <img src="/images/QuestionCTF-Week1-wp/image-20251010173412168.png" srcset="/img/loading.gif" lazyload alt="image-20251010173412168"></p>
+<p>   发送到重放</p>
+<p>   <img src="/images/QuestionCTF-Week1-wp/image-20251010173614540.png" srcset="/img/loading.gif" lazyload alt="image-20251010173614540"></p>
+<p>   要求用**?CTFBrowser**浏览器访问，就是将UA头修改为该串即可，然后点击发送</p>
+<p>   <img src="/images/QuestionCTF-Week1-wp/image-20251010173801791.png" srcset="/img/loading.gif" lazyload alt="image-20251010173801791"></p>
+<ol start="2">
+<li><p>要求GET传参，在GET后面斜杠后加上<code>?welcome=to</code></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010174011593.png" srcset="/img/loading.gif" lazyload alt="image-20251010174011593"></p>
+</li>
+<li><p>这次要求用POST传一个<code>the=?CTF</code>，先将当前GET请求转为POST，右键修改即可</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010174201413.png" srcset="/img/loading.gif" lazyload alt="image-20251010174201413"></p>
+<p>修改之后发现welcome&#x3D;to到了请求体里，重新写回POST后的斜杠后，再在请求体位置写入<code>the=?CTF</code></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010174535713.png" srcset="/img/loading.gif" lazyload alt="image-20251010174535713"></p>
+</li>
+<li><p>需要设置cookie，在请求头里加上<code>Cookie:wishu=happiness</code></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010174751329.png" srcset="/img/loading.gif" lazyload alt="image-20251010174751329"></p>
+</li>
+<li><p>只能从?CTF来，说明需要添加Referer头，表明来源：<code>Referer:?CTF</code></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010174927354.png" srcset="/img/loading.gif" lazyload alt="image-20251010174927354"></p>
+</li>
+<li><p>只能从本地访问，就需要设置X-Forwarded-For头，本地即127.0.0.1：<code>X-Forwarded-For:127.0.0.1</code></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010175058915.png" srcset="/img/loading.gif" lazyload alt="image-20251010175058915"></p>
+<p>得到flag</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">flag&#123;<span class="hljs-number">8489b849</span>-<span class="hljs-number">3333</span>-46ec-b2c8-f8192e82ee95&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="secret-of-php"><a href="#secret-of-php" class="headerlink" title="secret-of-php"></a>secret-of-php</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010175418793.png" srcset="/img/loading.gif" lazyload alt="image-20251010175418793"></p>
+<p>下载得到几个php文件</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010175520811.png" srcset="/img/loading.gif" lazyload alt="image-20251010175520811"></p>
+<p>可以发现index.php包含了flag.php</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010175709010.png" srcset="/img/loading.gif" lazyload alt="image-20251010175709010"></p>
+<p>flag.php里是个路径，所以我们可以直接拼接到url里，绕过index.php</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010175804549.png" srcset="/img/loading.gif" lazyload alt="image-20251010175804549"></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010175824512.png" srcset="/img/loading.gif" lazyload alt="image-20251010175824512"></p>
+<p>一眼望去，全是md5，咱们一个一个来</p>
+<ol>
+<li><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;a&#x27;</span>];<br><span class="hljs-variable">$b</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;b&#x27;</span>];<br><br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$a</span>) &amp;&amp; <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$b</span>))&#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$a</span> !== <span class="hljs-variable">$b</span> &amp;&amp; <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-variable">$a</span>) == <span class="hljs-title function_ invoke__">md5</span>(<span class="hljs-variable">$b</span>))&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;yes&lt;br&gt;&quot;</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;no&quot;</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>需要POST传入a和b，并且a不强等于b，但md5弱类型相等</p>
+<p>所以我们只需要传入：<code>a=s1885207154a&amp;b=s1836677006a</code></p>
+<p>因为</p>
+<p>md5(“s1885207154a”) &#x3D;&gt; 0e509367213418206700842008763514<br>md5(“s1836677006a”) &#x3D;&gt; 0e481036490867661113260034900752<br>二者都是0e开头，在php中0e会被当做科学计数法，就算后面有字母，其结果也是0，所以上面的if判断结果使true，成功绕过</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010180757382.png" srcset="/img/loading.gif" lazyload alt="image-20251010180757382"></p>
+</li>
+<li><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;aa&#x27;</span>];<br><span class="hljs-variable">$b</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;bb&#x27;</span>];<br><span class="hljs-keyword">if</span> (<span class="hljs-variable">$a</span> !== <span class="hljs-variable">$b</span> &amp;&amp; <span class="hljs-title function_ invoke__">md5</span>((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$a</span>) === <span class="hljs-title function_ invoke__">md5</span>((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$b</span>))&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;yes yes&lt;br&gt;&quot;</span>;<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;no no&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>$_REQUEST即GET和POST传参均可</p>
+<p>需要满足两者不相等，且将其强制转为字符串的md5相等</p>
+<p>我们可以用数组进行绕过<code>aa[]=1&amp;bb[]=2</code></p>
+<p>因为在PHP中，数组被转换为字符串时，都会转换成字符串”Array”，因此md5(‘Array’)的结果自然相同</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010181657308.png" srcset="/img/loading.gif" lazyload alt="image-20251010181657308"></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010181705611.png" srcset="/img/loading.gif" lazyload alt="image-20251010181705611"></p>
+<p>二者相等，所以绕过成功</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010181754431.png" srcset="/img/loading.gif" lazyload alt="image-20251010181754431"></p>
+</li>
+<li><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;aaa&#x27;</span>];<br>    <span class="hljs-variable">$b</span> = <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;bbb&#x27;</span>];<br>    <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$a</span> !== (<span class="hljs-keyword">string</span>)<span class="hljs-variable">$b</span> &amp;&amp; <span class="hljs-title function_ invoke__">md5</span>((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$a</span>) === <span class="hljs-title function_ invoke__">md5</span>((<span class="hljs-keyword">string</span>)<span class="hljs-variable">$b</span>))&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;yes yes yes&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Congratulations! You have passed the second level, the flag is &quot;</span>.<span class="hljs-variable">$flag</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;no no no&quot;</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后一个就不能用常规办法了，需要进行md5强碰撞，即二者确实不相同，但二者的md5完全相同</p>
+<p>以下是一些常用的md5强碰撞值：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs llvm">psycho<span class="hljs-variable">%0</span>A<span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span>W<span class="hljs-variable">%ADZ</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%3</span>C<span class="hljs-variable">%8</span>A<span class="hljs-variable">%13</span>V<span class="hljs-variable">%B5</span><span class="hljs-variable">%96</span><span class="hljs-variable">%18</span>m<span class="hljs-variable">%A5</span><span class="hljs-variable">%EA2</span><span class="hljs-variable">%81</span>_<span class="hljs-variable">%FB</span><span class="hljs-variable">%D9</span><span class="hljs-variable">%24</span><span class="hljs-variable">%22</span><span class="hljs-variable">%2</span>F<span class="hljs-variable">%8</span>F<span class="hljs-variable">%D4D</span><span class="hljs-variable">%A27vX</span><span class="hljs-variable">%B8</span><span class="hljs-variable">%08</span><span class="hljs-variable">%D7m</span><span class="hljs-variable">%2</span>C<span class="hljs-variable">%E0</span><span class="hljs-variable">%D4LR</span><span class="hljs-variable">%D7</span><span class="hljs-variable">%FBo</span><span class="hljs-variable">%10</span>t<span class="hljs-variable">%19</span><span class="hljs-variable">%02</span><span class="hljs-variable">%82</span><span class="hljs-variable">%7</span>D<span class="hljs-variable">%7</span>B<span class="hljs-variable">%2</span>B<span class="hljs-variable">%9</span>Bt<span class="hljs-variable">%05</span><span class="hljs-variable">%FFl</span><span class="hljs-variable">%AE</span><span class="hljs-variable">%8</span>DE<span class="hljs-variable">%F4</span><span class="hljs-variable">%1</span>F<span class="hljs-variable">%84</span><span class="hljs-variable">%3</span>C<span class="hljs-variable">%AE</span><span class="hljs-variable">%01</span><span class="hljs-variable">%0</span>F<span class="hljs-variable">%9</span>B<span class="hljs-variable">%12</span><span class="hljs-variable">%D4</span><span class="hljs-variable">%81</span><span class="hljs-variable">%A5J</span><span class="hljs-variable">%F9H</span><span class="hljs-variable">%0</span>FyE<span class="hljs-variable">%2</span>A<span class="hljs-variable">%DC</span><span class="hljs-variable">%2</span>B<span class="hljs-variable">%B1</span><span class="hljs-variable">%B4</span><span class="hljs-variable">%0</span>F<span class="hljs-variable">%DEcC</span><span class="hljs-variable">%40</span><span class="hljs-variable">%DA29</span><span class="hljs-variable">%8</span>B<span class="hljs-variable">%C3</span><span class="hljs-variable">%00</span><span class="hljs-variable">%7</span>F<span class="hljs-variable">%8</span>B_h<span class="hljs-variable">%C6</span><span class="hljs-variable">%D3</span><span class="hljs-variable">%8</span>Bd<span class="hljs-number">8</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%85</span><span class="hljs-variable">%7</span>C<span class="hljs-variable">%14</span>w<span class="hljs-variable">%06</span><span class="hljs-variable">%C2</span><span class="hljs-variable">%3</span>AC<span class="hljs-variable">%BC</span><span class="hljs-variable">%0</span>C<span class="hljs-variable">%1</span>B<span class="hljs-variable">%FD</span><span class="hljs-variable">%BB</span><span class="hljs-variable">%98</span><span class="hljs-variable">%CE</span><span class="hljs-variable">%16</span><span class="hljs-variable">%CE</span><span class="hljs-variable">%B7</span><span class="hljs-variable">%B6</span><span class="hljs-variable">%3</span>A<span class="hljs-variable">%F3</span><span class="hljs-variable">%99</span><span class="hljs-variable">%B59</span><span class="hljs-variable">%F9</span><span class="hljs-variable">%FF</span><span class="hljs-variable">%C2</span><br><br>与<br><br>psycho<span class="hljs-variable">%0</span>A<span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span><span class="hljs-variable">%00</span>W<span class="hljs-variable">%ADZ</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%3</span>C<span class="hljs-variable">%8</span>A<span class="hljs-variable">%13</span>V<span class="hljs-variable">%B5</span><span class="hljs-variable">%96</span><span class="hljs-variable">%18</span>m<span class="hljs-variable">%A5</span><span class="hljs-variable">%EA2</span><span class="hljs-variable">%81</span>_<span class="hljs-variable">%FB</span><span class="hljs-variable">%D9</span><span class="hljs-variable">%A4</span><span class="hljs-variable">%22</span><span class="hljs-variable">%2</span>F<span class="hljs-variable">%8</span>F<span class="hljs-variable">%D4D</span><span class="hljs-variable">%A27vX</span><span class="hljs-variable">%B8</span><span class="hljs-variable">%08</span><span class="hljs-variable">%D7m</span><span class="hljs-variable">%2</span>C<span class="hljs-variable">%E0</span><span class="hljs-variable">%D4LR</span><span class="hljs-variable">%D7</span><span class="hljs-variable">%FBo</span><span class="hljs-variable">%10</span>t<span class="hljs-variable">%19</span><span class="hljs-variable">%02</span><span class="hljs-variable">%02</span><span class="hljs-variable">%7</span>E<span class="hljs-variable">%7</span>B<span class="hljs-variable">%2</span>B<span class="hljs-variable">%9</span>Bt<span class="hljs-variable">%05</span><span class="hljs-variable">%FFl</span><span class="hljs-variable">%AE</span><span class="hljs-variable">%8</span>DE<span class="hljs-variable">%F4</span><span class="hljs-variable">%1</span>F<span class="hljs-variable">%04</span><span class="hljs-variable">%3</span>C<span class="hljs-variable">%AE</span><span class="hljs-variable">%01</span><span class="hljs-variable">%0</span>F<span class="hljs-variable">%9</span>B<span class="hljs-variable">%12</span><span class="hljs-variable">%D4</span><span class="hljs-variable">%81</span><span class="hljs-variable">%A5J</span><span class="hljs-variable">%F9H</span><span class="hljs-variable">%0</span>FyE<span class="hljs-variable">%2</span>A<span class="hljs-variable">%DC</span><span class="hljs-variable">%2</span>B<span class="hljs-variable">%B1</span><span class="hljs-variable">%B4</span><span class="hljs-variable">%0</span>F<span class="hljs-variable">%DEc</span><span class="hljs-variable">%C3</span><span class="hljs-variable">%40</span><span class="hljs-variable">%DA29</span><span class="hljs-variable">%8</span>B<span class="hljs-variable">%C3</span><span class="hljs-variable">%00</span><span class="hljs-variable">%7</span>F<span class="hljs-variable">%8</span>B_h<span class="hljs-variable">%C6</span><span class="hljs-variable">%D3</span><span class="hljs-variable">%8</span>Bd<span class="hljs-number">8</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%85</span><span class="hljs-variable">%7</span>C<span class="hljs-variable">%14</span>w<span class="hljs-variable">%06</span><span class="hljs-variable">%C2</span><span class="hljs-variable">%3</span>AC<span class="hljs-variable">%3</span>C<span class="hljs-variable">%0</span>C<span class="hljs-variable">%1</span>B<span class="hljs-variable">%FD</span><span class="hljs-variable">%BB</span><span class="hljs-variable">%98</span><span class="hljs-variable">%CE</span><span class="hljs-variable">%16</span><span class="hljs-variable">%CE</span><span class="hljs-variable">%B7</span><span class="hljs-variable">%B6</span><span class="hljs-variable">%3</span>A<span class="hljs-variable">%F3</span><span class="hljs-variable">%9959</span><span class="hljs-variable">%F9</span><span class="hljs-variable">%FF</span><span class="hljs-variable">%C2</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs llvm">a<span class="hljs-operator">=</span><span class="hljs-variable">%4</span>d<span class="hljs-variable">%c9</span><span class="hljs-variable">%68</span><span class="hljs-variable">%ff</span><span class="hljs-variable">%0</span>e<span class="hljs-variable">%e3</span><span class="hljs-variable">%5</span><span class="hljs-keyword">c</span><span class="hljs-variable">%20</span><span class="hljs-variable">%95</span><span class="hljs-variable">%72</span><span class="hljs-variable">%d4</span><span class="hljs-variable">%77</span><span class="hljs-variable">%7</span>b<span class="hljs-variable">%72</span><span class="hljs-variable">%15</span><span class="hljs-variable">%87</span><span class="hljs-variable">%d3</span><span class="hljs-variable">%6</span>f<span class="hljs-variable">%a7</span><span class="hljs-variable">%b2</span><span class="hljs-variable">%1</span>b<span class="hljs-variable">%dc</span><span class="hljs-variable">%56</span><span class="hljs-variable">%b7</span><span class="hljs-variable">%4</span>a<span class="hljs-variable">%3</span>d<span class="hljs-variable">%c0</span><span class="hljs-variable">%78</span><span class="hljs-variable">%3</span>e<span class="hljs-variable">%7</span>b<span class="hljs-variable">%95</span><span class="hljs-variable">%18</span><span class="hljs-variable">%af</span><span class="hljs-variable">%bf</span><span class="hljs-variable">%a2</span><span class="hljs-variable">%00</span><span class="hljs-variable">%a8</span><span class="hljs-variable">%28</span><span class="hljs-variable">%4</span>b<span class="hljs-variable">%f3</span><span class="hljs-variable">%6</span>e<span class="hljs-variable">%8</span>e<span class="hljs-variable">%4</span>b<span class="hljs-variable">%55</span><span class="hljs-variable">%b3</span><span class="hljs-variable">%5</span>f<span class="hljs-variable">%42</span><span class="hljs-variable">%75</span><span class="hljs-variable">%93</span><span class="hljs-variable">%d8</span><span class="hljs-variable">%49</span><span class="hljs-variable">%67</span><span class="hljs-variable">%6</span>d<span class="hljs-variable">%a0</span><span class="hljs-variable">%d1</span><span class="hljs-variable">%55</span><span class="hljs-variable">%5</span>d<span class="hljs-variable">%83</span><span class="hljs-variable">%60</span><span class="hljs-variable">%fb</span><span class="hljs-variable">%5</span>f<span class="hljs-variable">%07</span><span class="hljs-variable">%fe</span><span class="hljs-variable">%a2</span><br><br>与<br><br>b<span class="hljs-operator">=</span><span class="hljs-variable">%4</span>d<span class="hljs-variable">%c9</span><span class="hljs-variable">%68</span><span class="hljs-variable">%ff</span><span class="hljs-variable">%0</span>e<span class="hljs-variable">%e3</span><span class="hljs-variable">%5</span><span class="hljs-keyword">c</span><span class="hljs-variable">%20</span><span class="hljs-variable">%95</span><span class="hljs-variable">%72</span><span class="hljs-variable">%d4</span><span class="hljs-variable">%77</span><span class="hljs-variable">%7</span>b<span class="hljs-variable">%72</span><span class="hljs-variable">%15</span><span class="hljs-variable">%87</span><span class="hljs-variable">%d3</span><span class="hljs-variable">%6</span>f<span class="hljs-variable">%a7</span><span class="hljs-variable">%b2</span><span class="hljs-variable">%1</span>b<span class="hljs-variable">%dc</span><span class="hljs-variable">%56</span><span class="hljs-variable">%b7</span><span class="hljs-variable">%4</span>a<span class="hljs-variable">%3</span>d<span class="hljs-variable">%c0</span><span class="hljs-variable">%78</span><span class="hljs-variable">%3</span>e<span class="hljs-variable">%7</span>b<span class="hljs-variable">%95</span><span class="hljs-variable">%18</span><span class="hljs-variable">%af</span><span class="hljs-variable">%bf</span><span class="hljs-variable">%a2</span><span class="hljs-variable">%02</span><span class="hljs-variable">%a8</span><span class="hljs-variable">%28</span><span class="hljs-variable">%4</span>b<span class="hljs-variable">%f3</span><span class="hljs-variable">%6</span>e<span class="hljs-variable">%8</span>e<span class="hljs-variable">%4</span>b<span class="hljs-variable">%55</span><span class="hljs-variable">%b3</span><span class="hljs-variable">%5</span>f<span class="hljs-variable">%42</span><span class="hljs-variable">%75</span><span class="hljs-variable">%93</span><span class="hljs-variable">%d8</span><span class="hljs-variable">%49</span><span class="hljs-variable">%67</span><span class="hljs-variable">%6</span>d<span class="hljs-variable">%a0</span><span class="hljs-variable">%d1</span><span class="hljs-variable">%d5</span><span class="hljs-variable">%5</span>d<span class="hljs-variable">%83</span><span class="hljs-variable">%60</span><span class="hljs-variable">%fb</span><span class="hljs-variable">%5</span>f<span class="hljs-variable">%07</span><span class="hljs-variable">%fe</span><span class="hljs-variable">%a2</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs llvm">M<span class="hljs-variable">%C9h</span><span class="hljs-variable">%FF</span><span class="hljs-variable">%0</span>E<span class="hljs-variable">%E3</span><span class="hljs-variable">%5</span>C<span class="hljs-variable">%20</span><span class="hljs-variable">%95</span>r<span class="hljs-variable">%D4w</span><span class="hljs-variable">%7</span>Br<span class="hljs-variable">%15</span><span class="hljs-variable">%87</span><span class="hljs-variable">%D3o</span><span class="hljs-variable">%A7</span><span class="hljs-variable">%B2</span><span class="hljs-variable">%1</span>B<span class="hljs-variable">%DCV</span><span class="hljs-variable">%B7J</span><span class="hljs-variable">%3</span>D<span class="hljs-variable">%C0x</span><span class="hljs-variable">%3</span>E<span class="hljs-variable">%7</span>B<span class="hljs-variable">%95</span><span class="hljs-variable">%18</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%BF</span><span class="hljs-variable">%A2</span><span class="hljs-variable">%00</span><span class="hljs-variable">%A8</span><span class="hljs-variable">%28</span>K<span class="hljs-variable">%F3n</span><span class="hljs-variable">%8</span>EKU<span class="hljs-variable">%B3_Bu</span><span class="hljs-variable">%93</span><span class="hljs-variable">%D8Igm</span><span class="hljs-variable">%A0</span><span class="hljs-variable">%D1U</span><span class="hljs-variable">%5</span>D<span class="hljs-variable">%83</span><span class="hljs-variable">%60</span><span class="hljs-variable">%FB_</span><span class="hljs-variable">%07</span><span class="hljs-variable">%FE</span><span class="hljs-variable">%A2</span><br><br>与<br><br>M<span class="hljs-variable">%C9h</span><span class="hljs-variable">%FF</span><span class="hljs-variable">%0</span>E<span class="hljs-variable">%E3</span><span class="hljs-variable">%5</span>C<span class="hljs-variable">%20</span><span class="hljs-variable">%95</span>r<span class="hljs-variable">%D4w</span><span class="hljs-variable">%7</span>Br<span class="hljs-variable">%15</span><span class="hljs-variable">%87</span><span class="hljs-variable">%D3o</span><span class="hljs-variable">%A7</span><span class="hljs-variable">%B2</span><span class="hljs-variable">%1</span>B<span class="hljs-variable">%DCV</span><span class="hljs-variable">%B7J</span><span class="hljs-variable">%3</span>D<span class="hljs-variable">%C0x</span><span class="hljs-variable">%3</span>E<span class="hljs-variable">%7</span>B<span class="hljs-variable">%95</span><span class="hljs-variable">%18</span><span class="hljs-variable">%AF</span><span class="hljs-variable">%BF</span><span class="hljs-variable">%A2</span><span class="hljs-variable">%02</span><span class="hljs-variable">%A8</span><span class="hljs-variable">%28</span>K<span class="hljs-variable">%F3n</span><span class="hljs-variable">%8</span>EKU<span class="hljs-variable">%B3_Bu</span><span class="hljs-variable">%93</span><span class="hljs-variable">%D8Igm</span><span class="hljs-variable">%A0</span><span class="hljs-variable">%D1</span><span class="hljs-variable">%D5</span><span class="hljs-variable">%5</span>D<span class="hljs-variable">%83</span><span class="hljs-variable">%60</span><span class="hljs-variable">%FB_</span><span class="hljs-variable">%07</span><span class="hljs-variable">%FE</span><span class="hljs-variable">%A2</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010182127887.png" srcset="/img/loading.gif" lazyload alt="image-20251010182127887"></p>
+<p>得到flag</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">9</span>fa1df49-bf21-<span class="hljs-number">49</span>c9-b159-<span class="hljs-number">871</span>fcd22c5c9&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="game-前端小游戏"><a href="#game-前端小游戏" class="headerlink" title="game-前端小游戏"></a>game-前端小游戏</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010182458471.png" srcset="/img/loading.gif" lazyload alt="image-20251010182458471"></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010182514369.png" srcset="/img/loading.gif" lazyload alt="image-20251010182514369"></p>
+<p>题目说是前端小游戏，那直接F12查看一下js源码</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010182627340.png" srcset="/img/loading.gif" lazyload alt="image-20251010182627340"></p>
+<p><del>出题人这个坏，30分也不给flag</del></p>
+<p>发现疑似base64的字符串，直接拿去解密或者控制台运行atob函数：</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">atob</span>(<span class="hljs-string">&#x27;ZmxhZ3tmYjNiZTIyMy03MGM2LTQwMzYtYmJhNi1jMzVjZjg5ZjI4OWZ9&#x27;</span>);</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010182952369.png" srcset="/img/loading.gif" lazyload alt="image-20251010182952369"></p>
+<p>得到flag</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;fb3be223-<span class="hljs-number">70</span>c6-<span class="hljs-number">4036</span>-bba6-c35cf89f289f&#125;<br></code></pre></td></tr></table></figure>
+
+<p>还有一种解法：</p>
+<p>可以发现如果分数小于0，就会输出flag，那我们直接修改源码，将score修改为-1</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010183221733.png" srcset="/img/loading.gif" lazyload alt="image-20251010183221733"></p>
+<p>修改startGame函数的score为负数，timeLeft也可以修改为1，毕竟不想等60秒</p>
+<p>得到flag</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010183332614.png" srcset="/img/loading.gif" lazyload alt="image-20251010183332614"></p>
+<hr>
+<h3 id="food-包含不明东西的食物？！"><a href="#food-包含不明东西的食物？！" class="headerlink" title="food-包含不明东西的食物？！"></a>food-包含不明东西的食物？！</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010183908340.png" srcset="/img/loading.gif" lazyload alt="image-20251010183908340"></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010183928834.png" srcset="/img/loading.gif" lazyload alt="image-20251010183928834"></p>
+<p>查看源码，发现flag在flag.txt中，并且提示include，那这题应该就是<strong>文件包含</strong>了</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010184041761.png" srcset="/img/loading.gif" lazyload alt="image-20251010184041761"></p>
+<p>直接输入flag.txt显示不存在，很大可能是不在该目录下</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010184132616.png" srcset="/img/loading.gif" lazyload alt="image-20251010184132616"></p>
+<p>在bp抓包</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010184541892.png" srcset="/img/loading.gif" lazyload alt="image-20251010184541892"></p>
+<p>既然不在该目录下，那估计在其他目录下，一般来说flag都在根目录，这时可以尝试一下目录遍历</p>
+<p>即使用<code>../</code>回到上层目录</p>
+<p>先右键将其发送到重放器</p>
+<p>发现确实在根目录，得到flag</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">filename=..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>flag.txt<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010184835197.png" srcset="/img/loading.gif" lazyload alt="image-20251010184835197"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">82</span>a86f28-e31a-<span class="hljs-number">4</span>aad-b91a-<span class="hljs-number">84</span>b5a012ddc0&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="俱乐部之旅-1-邀请函"><a href="#俱乐部之旅-1-邀请函" class="headerlink" title="俱乐部之旅(1) - 邀请函"></a>俱乐部之旅(1) - 邀请函</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251016184458927.png" srcset="/img/loading.gif" lazyload alt="image-20251016184458927"></p>
+<p>下载zip，发现加密了，爆破也爆破不出来，丢到010里面看一下</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016184552806.png" srcset="/img/loading.gif" lazyload alt="image-20251016184552806"></p>
+<p>在最后发现了一串字符，这里我一开始也没看出来，以为这就是密码，但是行不通</p>
+<p>最后终于发现，问号代表的是掩码</p>
+<p>用ARCHPR的掩码功能爆破得到密码：<strong>c5im8467</strong></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016184822459.png" srcset="/img/loading.gif" lazyload alt="image-20251016184822459"></p>
+<p>进入后发现该docx文档其实也没东西</p>
+<p>直接用binwalk拆分文件</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016190740185.png" srcset="/img/loading.gif" lazyload alt="image-20251016190740185"></p>
+<p>在<strong>core.xml中发现可疑信息和提示</strong></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016190808786.png" srcset="/img/loading.gif" lazyload alt="image-20251016190808786"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dc:description</span>&gt;</span>11001101101100110000111001111111011101011101100001110010110010010111110110101111010001100111100111101111111010011110011101111101100011111010<span class="hljs-tag">&lt;/<span class="hljs-name">dc:description</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">cp:keywords</span>&gt;</span>do u know cyberchef?<span class="hljs-tag">&lt;/<span class="hljs-name">cp:keywords</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">cp:lastModifiedBy</span>&gt;</span>炙恕qwq<span class="hljs-tag">&lt;/<span class="hljs-name">cp:lastModifiedBy</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dcterms:modified</span> <span class="hljs-attr">xsi:type</span>=<span class="hljs-string">&quot;dcterms:W3CDTF&quot;</span>&gt;</span>2025-08-13T09:59:15Z<span class="hljs-tag">&lt;/<span class="hljs-name">dcterms:modified</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dc:title</span>&gt;</span>标准ASCII码使用‌7位二进制数‌表示字符<span class="hljs-tag">&lt;/<span class="hljs-name">dc:title</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>根据提示可知，使用cyberchef，设置7位二进制数，将以上二进制转码即可</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016191021444.png" srcset="/img/loading.gif" lazyload alt="image-20251016191021444"></p>
+<p>得到一半flag：<strong>flag{W0rd_5t3g_is_1z</strong></p>
+<p>接着找</p>
+<p>找到另一半可疑内容，文件名：<strong>u_f0und_m3</strong></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016191402279.png" srcset="/img/loading.gif" lazyload alt="image-20251016191402279"></p>
+<p>打开发现像是16进制</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016191443301.png" srcset="/img/loading.gif" lazyload alt="image-20251016191443301"></p>
+<p>16进制转一下字符</p>
+<p>得到另一半：<strong>&amp;Welc0me_t0_th3_c5im_C1ub}</strong></p>
+<p>完整flag如下：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">flag&#123;W0rd_5t3g_is_1z<span class="hljs-meta">&amp;Welc0me_t0_th3_c5im_C1ub&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="《关于我穿越到CTF的异世界这档事-序》"><a href="#《关于我穿越到CTF的异世界这档事-序》" class="headerlink" title="《关于我穿越到CTF的异世界这档事:序》"></a>《关于我穿越到CTF的异世界这档事:序》</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251016205633054.png" srcset="/img/loading.gif" lazyload alt="image-20251016205633054"></p>
+<p>下载附件得到两个txt文本，alphabet是多行base64，base8看不出来</p>
+<p>使用工具对alphabet内容进行处理，得到隐写内容：<strong>?CTFmisc</strong></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016205815108.png" srcset="/img/loading.gif" lazyload alt="image-20251016205815108"></p>
+<p>又从文件名可知，应该是自定义的编码表，刚好又是<strong>8位</strong>，跟base8对上了</p>
+<table>
+<thead>
+<tr>
+<th><code>?</code></th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>C</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>7</td>
+</tr>
+</tbody></table>
+<p>所以我们有了大概的思路：</p>
+<ol>
+<li><strong>文本 -&gt; 八进制</strong>：将<code>base8.txt</code>中的每个字符根据我们上一步的编码表替换成对应的八进制数字。</li>
+<li><strong>八进制 -&gt; 二进制</strong>：将得到的八进制数字串，每1位转换成3位二进制数（例如，<code>2</code> -&gt; <code>010</code>，<code>7</code> -&gt; <code>111</code>）。</li>
+<li><strong>二进制 -&gt; ASCII</strong>：将二进制串每8位（1字节）分组，转换成对应的ASCII字符。</li>
+</ol>
+<p>手动处理起来可能有点麻烦，编写脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 自定义的base8编码表</span><br><span class="hljs-keyword">import</span> base64<br><br>custom_alphabet = <span class="hljs-string">&quot;?CTFmisc&quot;</span><br><br><span class="hljs-comment"># Tsmssic?FT?ii?sFFi?iTimCTC?mcCmsTiTmmCCCFs?sCCiiTFTcmCmFTCscFicTTs?ciC?TFFTim?s?TTmsmCmFCmmiFCmsTFTimCCsFCmiTicTT?msFCTTTs?c??ssFCmi?mciCcT=====</span><br><br><span class="hljs-comment"># base8.txt中的内容 (去掉末尾的填充符)</span><br>encoded_str = <span class="hljs-string">&quot;Tsmssic?FT?ii?sFFi?iTimCTC?mcCmsTiTmmCCCFs?sCCiiTFTcmCmFTCscFicTTs?ciC?TFFTim?s?TTmsmCmFCmmiFCmsTFTimCCsFCmiTicTT?msFCTTTs?c??ssFCmi?mciCcT&quot;</span><br><br><span class="hljs-comment"># 1. 建立字符到八进制数字的映射</span><br>char_to_octal = &#123;char: i <span class="hljs-keyword">for</span> i, char <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(custom_alphabet)&#125;<br><br><span class="hljs-comment"># 2. 将编码字符串转换为八进制字符串</span><br>octal_str = <span class="hljs-string">&quot;&quot;</span>.join([<span class="hljs-built_in">str</span>(char_to_octal[c]) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> encoded_str])<br><br><span class="hljs-comment"># 3. 将八进制字符串转换为二进制字符串</span><br>binary_str = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-keyword">for</span> oct_digit <span class="hljs-keyword">in</span> octal_str:<br>    binary_str += <span class="hljs-built_in">format</span>(<span class="hljs-built_in">int</span>(oct_digit), <span class="hljs-string">&#x27;03b&#x27;</span>) <span class="hljs-comment"># 格式化为3位二进制，不足补0</span><br><br><span class="hljs-comment"># 4. 将二进制字符串每8位分组并转换为ASCII字符</span><br>decoded_base64 = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(binary_str), <span class="hljs-number">8</span>):<br>    byte = binary_str[i:i+<span class="hljs-number">8</span>]<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(byte) == <span class="hljs-number">8</span>:<br>        decoded_base64 += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(byte, <span class="hljs-number">2</span>))<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第一层解码结果 (Base64):&quot;</span>)<br><span class="hljs-built_in">print</span>(decoded_base64)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;base64解码结果：&quot;</span>)<br><span class="hljs-built_in">print</span>(base64.b64decode(decoded_base64).decode())<br><br></code></pre></td></tr></table></figure>
+
+<p>得到flag</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016210142009.png" srcset="/img/loading.gif" lazyload alt="image-20251016210142009"></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">flag</span><span class="hljs-template-variable">&#123;Th3_Pr1nc1pl3_0f_Base_1s_S0_Ezz&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="维吉尼亚朋友的来信"><a href="#维吉尼亚朋友的来信" class="headerlink" title="维吉尼亚朋友的来信"></a>维吉尼亚朋友的来信</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251016213338230.png" srcset="/img/loading.gif" lazyload alt="image-20251016213338230"></p>
+<p>由题可知跟维吉尼亚密码有关</p>
+<p>附件是个wav音频，题目描述让<strong>用眼睛去听</strong>，<strong>深处的声音</strong></p>
+<p>用audacity打开文件，没发现什么可疑点，打开频谱图</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016213529070.png" srcset="/img/loading.gif" lazyload alt="image-20251016213529070"></p>
+<p>发现<strong>KEY{deepsound}</strong></p>
+<p>因为维吉尼亚密码是需要key进行解密的，所以我们已经获得了密钥</p>
+<p>但还缺密文</p>
+<p>猜测可能隐写进了文件</p>
+<p>同时key已经在提醒了，使用工具：<strong>deepsound</strong></p>
+<p>打开后发现确实藏了东西</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016213721911.png" srcset="/img/loading.gif" lazyload alt="image-20251016213721911"></p>
+<p>导出得到</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">Gieg fsq sulirs,<br>  Osfprpi xd lvy gkumpaaba <span class="hljs-keyword">jruph </span>dx QNS!Wkmw xkb’n wxvx e vsay—vw’v e tasmaerxrh lzslr fxvmdkwnl phixh uvuyohrkt, ovyeh hzigq zcah rj gdvs, yihuc lxvrya foyi, pfr yihuc tjrnfr krphh s gypuhx apahcaj ws ft mbwbyhvis. Zslr, <span class="hljs-keyword">bry’pa </span>khlrwfl cdmf gvqg, pipjb nb vhi tplhyeqv mr rzoif, dqh xjjb <span class="hljs-string">&quot;C qrq’x ocgk&quot;</span> cawr <span class="hljs-string">&quot;M jxyilrg lx sjl.&quot;</span><br>  Ria’w zsvgq wz gklrkh xsyy ryivlzsfzlqk <span class="hljs-keyword">ei </span>xwlfw. Zi’zt szf ohhr xwwfy—fwdvmcy on n susfawa, mpudxgwaba <span class="hljs-keyword">bxu </span>lipvg, qbqgivxfu quhui xd khuew. Eyx izon’f wki qpyww <span class="hljs-keyword">bi </span>lx: ikwfs zlvxezw wm n ohwwdf, sprub wqpdz qvq d vyhz. Ohq <span class="hljs-keyword">bry’vt </span>fcn <span class="hljs-keyword">norri. </span>Izwm prpqycahs gkumztk ch propeqgfuglrr, <span class="hljs-keyword">sc </span>kvuelqk mswom, nqg pmulwht hdgl dlvye xs.<br>  Ws sajy vq. Hbtagfy. Rasivxeshg. Dvo ujwgnvrqw. Gtdsvedwi xww hcab ymgigfcrv, drh sgb’n <span class="hljs-keyword">shdv </span>xww gnhpepih. Lvy PWI asgdr cf eumkwlsl <span class="hljs-keyword">jlwl </span>cdm wh vw, drh <span class="hljs-keyword">lw </span>qua’w zemi lc mrh zligw mihu msygfss gdniw ngi.<br>Zydj mw <span class="hljs-string">&quot;umbhl ohxxtj hi lrx&quot;</span>. Vibwavru zvee lvy sodk gdfhyaw lr <span class="hljs-keyword">jasu&#123;&#125; </span>uag xwi <span class="hljs-keyword">jfryeolri‘_&#x27; </span>ig fycodgi hhowr fkevpuhye<span class="hljs-string">&#x27; &#x27;</span>.<br><br>Ehwx lagbrv!<br><br></code></pre></td></tr></table></figure>
+
+<p>使用key进行解码</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251016213843659.png" srcset="/img/loading.gif" lazyload alt="image-20251016213843659"></p>
+<p>得到flag</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">flag</span><span class="hljs-template-variable">&#123;funny_letter_to_you&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="布豪有黑客-一"><a href="#布豪有黑客-一" class="headerlink" title="布豪有黑客(一)"></a>布豪有黑客(一)</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010185201705.png" srcset="/img/loading.gif" lazyload alt="image-20251010185201705"></p>
+<p>下载解压得到一个流量包，wireshark打开</p>
+<p>题目关键字：<strong>HTTP</strong>、<strong>flag</strong>、<strong>密码</strong></p>
+<p>直接搜索flag</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010185349304.png" srcset="/img/loading.gif" lazyload alt="image-20251010185349304"></p>
+<p>发现一个GET请求获取<strong>flag压缩包</strong></p>
+<p>右键追踪HTTP流</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010185508096.png" srcset="/img/loading.gif" lazyload alt="image-20251010185508096"></p>
+<p>得到flag压缩包</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010185600932.png" srcset="/img/loading.gif" lazyload alt="image-20251010185600932"></p>
+<p><em>但不知道为什么，将该压缩包提取出来后flag.txt是坏的</em></p>
+<p>此时我们已经有压缩包了，但还缺解压密码，通过右下角的流进行切换查找</p>
+<p>在流1找到password，为**?CTF2025**</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010185823069.png" srcset="/img/loading.gif" lazyload alt="image-20251010185823069"></p>
+<p>此时直接打开原7z压缩包</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010185950455.png" srcset="/img/loading.gif" lazyload alt="image-20251010185950455"></p>
+<p>再双击</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190012508.png" srcset="/img/loading.gif" lazyload alt="image-20251010190012508"></p>
+<p>再双击，输入密码即可得到flag</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190027618.png" srcset="/img/loading.gif" lazyload alt="image-20251010190027618"></p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190111956.png" srcset="/img/loading.gif" lazyload alt="image-20251010190111956"></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">flag</span><span class="hljs-template-variable">&#123;Wireshark_1s_4wes0m3&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="文化木的侦探委托-一"><a href="#文化木的侦探委托-一" class="headerlink" title="文化木的侦探委托(一)"></a>文化木的侦探委托(一)</h3><p><img src="/images/QuestionCTF-Week1-wp/image-20251010190156300.png" srcset="/img/loading.gif" lazyload alt="image-20251010190156300"></p>
+<p>下载下来后，用工具发现图片CRC校验不对</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190316752.png" srcset="/img/loading.gif" lazyload alt="image-20251010190316752"></p>
+<p>可能是图片宽高被修改了，使用工具一键修复</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190409567.png" srcset="/img/loading.gif" lazyload alt="image-20251010190409567"></p>
+<p>得到完整图片</p>
+<p>提示隐写</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190430477.png" srcset="/img/loading.gif" lazyload alt="image-20251010190430477"></p>
+<p>使用stegsolve工具</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190638050.png" srcset="/img/loading.gif" lazyload alt="image-20251010190638050"></p>
+<p>根据提示选择通道</p>
+<p><img src="/images/QuestionCTF-Week1-wp/image-20251010190723022.png" srcset="/img/loading.gif" lazyload alt="image-20251010190723022"></p>
+<p>得到flag</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">flag</span><span class="hljs-template-variable">&#123;Please_Find_ME&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%B5%9B%E9%A2%98wp/" class="category-chain-item">赛题wp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>QuestionCTF-Week1-wp</div>
+      <div>https://goocean5263.github.io/2025/11/02/QuestionCTF-Week1-wp/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Goocean5263</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/02/QuestionCTF-Week2-wp/" title="QuestionCTF-Week2-wp">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">QuestionCTF-Week2-wp</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/05/28/2025%E3%80%90-%E8%BD%A9%E8%BE%95%E6%9D%AF-%E4%BA%91%E7%9B%BE%E7%A0%BA%E5%89%91%E3%80%91%E9%83%A8%E5%88%86%E5%85%A5%E9%97%A8%E9%A2%98wp/" title="2025【&#34;轩辕杯&#34;云盾砺剑】部分入门题wp">
+                        <span class="hidden-mobile">2025【&#34;轩辕杯&#34;云盾砺剑】部分入门题wp</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Goocean5263</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

