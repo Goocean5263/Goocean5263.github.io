@@ -80,9 +80,9 @@
       
       <tag>RCE</tag>
       
-      <tag>弱口令</tag>
-      
       <tag>XSS</tag>
+      
+      <tag>弱口令</tag>
       
     </tags>
     
@@ -164,6 +164,37 @@
       <tag>CTF</tag>
       
       <tag>wp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>某校园劳务派遣招聘网站渗透测试</title>
+    <link href="/2025/11/01/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    <url>/2025/11/01/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="某校园劳务派遣招聘网站渗透测试"><a href="#某校园劳务派遣招聘网站渗透测试" class="headerlink" title="某校园劳务派遣招聘网站渗透测试"></a>某校园劳务派遣招聘网站渗透测试</h1><h2 id="任意用户注册"><a href="#任意用户注册" class="headerlink" title="任意用户注册"></a>任意用户注册</h2><p>在该网站测试过程中，发现该网站的输入限制都是使用的前端JS，所以只需要在浏览器<strong>禁用JS</strong>即可输入<strong>任意内容注册账号</strong></p><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250913161550281-c3d68.png" alt="image-20250913161550281-c3d68"></p><hr><h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>有了任意用户注册这个前提，就可以构造用户名</p><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>真实姓名处构造：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)&lt;/script&gt;<br></code></pre></td></tr></table></figure><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250913161550281-c3d68.png" alt="image-20250913161550281-c3d68"></p><p>先将<strong>JS禁用，再注册</strong></p><p>因为经过测试，该系统会将用户名显示在页面中，所以就联想到了<strong>存储型XSS漏洞</strong></p><h3 id="登录刚才注册的账号发现弹窗"><a href="#登录刚才注册的账号发现弹窗" class="headerlink" title="登录刚才注册的账号发现弹窗"></a>登录刚才注册的账号发现弹窗</h3><p><em>登录进去后，将<strong>禁用JS</strong>关闭，再刷新界面就能看到弹窗</em></p><ul><li><strong>启用JS：</strong></li></ul><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250913162130444-3dd1e.png" alt="image-20250913162130444-3dd1e"></p><ul><li><strong>刷新页面：</strong></li></ul><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250913162148100-2d9df.png" alt="image-20250913162148100-2d9df"></p><p>即出现弹窗</p><p>经检验，发现每次登录或者刷新界面均可触发弹窗</p><p>确定是<strong>存储型XSS</strong></p><h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><h3 id="关闭JS校验，创建注入账号"><a href="#关闭JS校验，创建注入账号" class="headerlink" title="关闭JS校验，创建注入账号"></a>关闭JS校验，创建注入账号</h3><p>先F12+F1，禁用JS</p><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250912222317891-90869.png" alt="image-20250912222317891-90869"></p><p>再通过注册页面，将账号输入为我们的payload：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-string">&#x27; AND extractvalue(1, concat(0x7e, database())) #</span><br></code></pre></td></tr></table></figure><p>其他手机号什么的可以随意填写，也没有JS限制了</p><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250912222637618-61346.png" alt="image-20250912222637618-61346"></p><h3 id="登录进去在修改密码位置进行测试"><a href="#登录进去在修改密码位置进行测试" class="headerlink" title="登录进去在修改密码位置进行测试"></a>登录进去在修改密码位置进行测试</h3><p>在修改密码位置输入任意内容：</p><p><strong>原密码：123123</strong></p><p><strong>新密码：123123</strong></p><p><strong>确认密码：123123</strong></p><p>然后点击提交按钮</p><p>会出现报错页面，得到<strong>数据库名</strong></p><p><img src="/images/%E6%9F%90%E6%A0%A1%E5%9B%AD%E5%8A%B3%E5%8A%A1%E6%B4%BE%E9%81%A3%E6%8B%9B%E8%81%98%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20250912222829276-3317c.png" alt="image-20250912222829276-3317c"></p><p>可以发现该SQL注入是一个<strong>二次SQL注入</strong>漏洞，后端在取出数据库内容时未做校验，<strong>直接拼接到SQL语句中</strong>，触发报错</p><h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs">本文所载程序、技术方法仅面向合法合规的安全研究与教学场景，旨在提升网络安全防护能力，具有明确的技术研究属性。<br><br>任何单位或个人未经授权，将本文内容用于攻击、破坏等非法用途的，由此引发的全部法律责任、民事赔偿及连带责任，均由行为人独立承担，本站不承担任何连带责任。<br><br>本站内容均为技术交流与知识分享目的发布，若存在版权侵权或其他异议，请通过邮件联系处理，具体联系方式可点击页面上方的关于。<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>漏洞挖掘</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>RCE</tag>
+      
+      <tag>任意用户注册</tag>
+      
+      <tag>XSS</tag>
+      
+      <tag>二次SQL注入</tag>
       
     </tags>
     
